@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Receipt</title>
+<body>
+<nav>
+  <a href="/">Home</a>
+</nav>
+<header>
+  <h2>Kia's bookshop.</h2>
+</header>
+
+<main>
+  <h3>Thanks for shopping with us.</h3>
+  <div>
+    <span>Your order number is</span>
+    <span th:text="${yourOrder.getOrderNumber()}">.</span><br>
+    <br>
+  </div>
+  <div>
+    <span>The invoice: EUR</span>
+    <span th:text="${yourOrder.getTotalPriceOfOrder()}"></span><br>
+    <span>Payment received:</span>
+    <span th:text="${yourOrder.isInvoicePaid()}"></span><br>
+    <br>
+  </div>
+  <div>
+    <span>This order is for</span>
+    <span th:text="${yourOrder.getCustomerName()}"></span>
+  </div>
+  <div>
+    <span>Shipping address:</span>
+    <span th:text="${yourOrder.getCustomerAddress()}"></span><br>
+    <br>
+  </div>
+  <div>
+    <span>Order status:</span>
+    <span th:text="${yourOrder.getOrderStatus()}"></span>
+  </div>
+  <br>
+  <section>
+    <div>
+      <span>My book:</span>
+      <ul>
+        <li th:each="bookDetail: ${myBookDetails}">
+          <span th:text="${bookDetail.getDetail()}">: </span>
+          <span th:text="${bookDetail.getChosenFeature()}"> </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <br>
+
+</main>
+<footer>
+
+</footer>
+</body>
+</html>

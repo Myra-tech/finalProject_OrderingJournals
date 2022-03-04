@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your book</title>
+<body>
+<nav>
+    <a href="/">Home</a>
+</nav>
+<header>
+    <h2>Your personalised book.</h2>
+</header>
+
+<main>
+    <section>
+        <div>
+            <span><b>Cover type:</b></span>
+            <span th:text="${coverType}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span><b>Leather type:</b></span>
+            <span th:text="${leatherType}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span><b>Colour of the leather:</b></span>
+            <span th:text="${colourOfLeather}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span><b>Size:</b></span>
+            <span th:text="${size}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span><b>Number of pages:</b></span>
+            <span th:text="${numberOfPages}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span><b>Paper type:</b></span>
+            <span th:text="${paperType}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span><b>Paper base colour:</b></span>
+            <span th:text="${paperBaseColour}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span><b>Prints:</b></span>
+            <span th:text="${coverPrints}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span><b>Additional style elements:</b></span>
+            <span th:text="${additionalStyleElements}"></span>
+        </div>
+    </section>
+
+        <h2>Please enter your personal details.</h2>
+
+
+        <form method="get">     <!----VARBŪT NĒ. TIE KAS ZIN PASKATĪTIES ADRESES RINDĀ ZI KĀ TO IZDABŪT O INSPECT.
+                            Tu lietosi POST metodi te, lai klienta detaļas neparādītos web adreses ailē.---->
+            <div>
+                <label>Name, surname</label>
+                <input type="text" name="customerName">
+            </div>
+            <div>
+                <label>Shipping address:</label>
+                <input type="text" name="customerAddress">
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="email" name="customerEmail">
+            </div>
+            <br>
+            <div>
+                <!----button type="view">Review the order</button---->
+                <button type="submit">Submit</button>
+            </div>
+
+            <br>
+            <h3>Thanks for placing the order.</h3>
+            <div>
+                <span>Your order number is</span>
+                <span th:text="${yourOrder.getOrderNumber()}">.</span><br>
+                <span>Click</span>
+                <nav>
+                    <a href="/receipt">here</a> <!-----nesapratu, kā šo visu dabūt vienā rindā---->
+                </nav>
+                <span>to see the details of your order.</span>
+            </div>
+
+        </form>
+</main>
+<footer>
+
+</footer>
+</body>
+</html>
