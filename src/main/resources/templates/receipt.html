@@ -2,60 +2,178 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Receipt</title>
+    <meta charset="UTF-8">
+    <title>Receipt</title>
+</head>
 <body>
-<nav>
-  <a href="/">Home</a>
-</nav>
+<!--THE FOLLOWING NAVIGATION CODE IS FOUND AT THE BOTTOM OF THIS PAGE; I AM UNDECIDED WHERE SHOULD IT BE.-->
+<!--<nav>-->
+<!--    <a href="/">Home</a>-->
+<!--</nav>-->
+
 <header>
-  <h2>Kia's bookshop.</h2>
+    <h2>Kia's bookshop.</h2>
 </header>
 
 <main>
-  <h3>Thanks for shopping with us.</h3>
-  <div>
-    <span>Your order number is</span>
-    <span th:text="${yourOrder.getOrderNumber()}">.</span><br>
-    <br>
-  </div>
-  <div>
-    <span>The invoice: EUR</span>
-    <span th:text="${yourOrder.getTotalPriceOfOrder()}"></span><br>
-    <span>Payment received:</span>
-    <span th:text="${yourOrder.isInvoicePaid()}"></span><br>
-    <br>
-  </div>
-  <div>
-    <span>This order is for</span>
-    <span th:text="${yourOrder.getCustomerName()}"></span>
-  </div>
-  <div>
-    <span>Shipping address:</span>
-    <span th:text="${yourOrder.getCustomerAddress()}"></span><br>
-    <br>
-  </div>
-  <div>
-    <span>Order status:</span>
-    <span th:text="${yourOrder.getOrderStatus()}"></span>
-  </div>
-  <br>
-  <section>
-    <div>
-      <span>My book:</span>
-      <ul>
-        <li th:each="bookDetail: ${myBookDetails}">
-          <span th:text="${bookDetail.getDetail()}">: </span>
-          <span th:text="${bookDetail.getChosenFeature()}"> </span>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <br>
+    <h3>Thanks for shopping with us.</h3>
 
+    <section>
+        <div>
+            <span>Your order number is</span>
+            <span>XXXX</span>
+            <!--    <span th:text="${yourOrder.getOrderNumber()}">.</span><br>-->
+            <!--    THIS LINE MADE THE CODE BREAK-->
+            <!--    It worked before @RequestParam was introduced that sends some other parameters to this page-->
+        </div>
+        <br>
+
+        <div>
+            <span>The invoice: EUR</span>
+            <span>XXXX</span><br>
+            <!--      <span th:text="${yourOrder.getTotalPriceOfOrder()}"></span><br>-->
+            <!--      THIS LINE BREAKS THE CODE-->
+            <!--    It worked before @RequestParam was introduced that sends some other parameters to this page-->
+            <!--        XXXX is a placeholder-->
+
+            <span>Payment received:</span>
+            <span>XXXX</span>
+            <!--      <span th:text="${yourOrder.isInvoicePaid()}"></span><br>-->
+            <!--      THIS LINE BREAKS THE CODE-->
+            <!--    It worked before @RequestParam was introduced that sends some other parameters to this page-->
+            <!--        XXXX is a placeholder-->
+            <br>
+        </div>
+
+        <div>
+            <span>This order is for</span>
+            <span>XXXX</span>
+            <!--        THIS WAS THE PREVIOUS VERSION AND IT WORKED-->
+            <!--    <span th:text="${yourOrder.getCustomer().getCustomerName()}"></span>-->
+
+            <!--        AFTER DOING @RequestParam WHICH WAS SUPPOSED TO SEND THE CUSTOMER'S NAME HERE-->
+            <!--        IT DOESN'T-->
+            <!--                    <span th:text="${customerName}"></span>-->
+
+            <!--        XXXX is a placeholder-->
+        </div>
+
+        <div>
+            <span>Shipping address:</span>
+            <span>XXXX</span>
+            <!--        AFTER DOING @RequestParam WHICH WAS SUPPOSED TO SEND THE CUSTOMER'S ADDRESS HERE-->
+            <!--        ONCE ISOLATED, THE FOLLOWING LINE DOESN'T WORK-->
+            <!--                    <span th:text="${customerAddress}"></span><br>-->
+
+            <!--        XXXX is a placeholder-->
+            <br>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <span>Order status:</span>
+            <span>XXXX</span>
+            <!--            THE FOLLOWING LINE ISOLATED BREAKS THE PROGRAM-->
+            <!--            <span th:text="${yourOrder.getOrderStatus()}"></span>-->
+            <!--            IT WORKED BEFORE @RequestParam GOT INTRODUCED-->
+
+            <!--            IT APPEARS NO LONGER RECEIVING DATA FROM showTheBookPage() -->
+            <!--            BUT ALSO IT DOES NOT HEAR THE handleCustomerInformation()-->
+            <!--            IT DID HEAR THE showTheBookPage() BEFORE WITH ALL ITS STATEMENTS-->
+
+            <!--            XXXX is a placeholder-->
+        </div>
+        <br>
+        <div>
+            <span>My book:</span>
+            <span>XXXX THE LOOP XXXX</span>
+            <!--                <ul>-->
+            <!--                    <li th:each="bookDetail: ${myBookDetails}">-->
+            <!--                        <span th:text="${bookDetail.getDetail()}"></span>-->
+            <!--                        <span th:text="${bookDetail.getChosenFeature()}"> </span>-->
+            <!--                    </li>-->
+            <!--                </ul>-->
+
+            <!--                THE SAME: THE LOOP DOESN'T WORK AND BREAKS THE CODE FOLLOWING @RequestParam-->
+        </div>
+        <br>
+    </section>
+
+    <section>
+        <div>
+            <!--  <a href="/gallery">Look at some more books in our gallery.</a>-->
+            <a href="/">Go back to the home page.</a>
+        </div>
+    </section>
 </main>
 <footer>
 
 </footer>
 </body>
 </html>
+
+
+<!--PREVIOUS VERSION-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Receipt</title>-->
+<!--<body>-->
+<!--<nav>-->
+<!--  <a href="/">Home</a>-->
+<!--</nav>-->
+<!--<header>-->
+<!--  <h2>Kia's bookshop.</h2>-->
+<!--</header>-->
+
+<!--<main>-->
+<!--  <h3>Thanks for shopping with us.</h3>-->
+<!--  <div>-->
+<!--    <span>Your order number is</span>-->
+<!--    <span th:text="${yourOrder.getOrderNumber()}">.</span><br>-->
+<!--    <br>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <span>The invoice: EUR</span>-->
+<!--    <span th:text="${yourOrder.getTotalPriceOfOrder()}"></span><br>-->
+<!--    <span>Payment received:</span>-->
+<!--    <span th:text="${yourOrder.isInvoicePaid()}"></span><br>-->
+<!--    <br>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <span>This order is for</span>-->
+<!--    <span th:text="${yourOrder.getCustomerName()}"></span>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <span>Shipping address:</span>-->
+<!--    <span th:text="${yourOrder.getCustomerAddress()}"></span><br>-->
+<!--    <br>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <span>Order status:</span>-->
+<!--    <span th:text="${yourOrder.getOrderStatus()}"></span>-->
+<!--  </div>-->
+<!--  <br>-->
+<!--  <section>-->
+<!--    <div>-->
+<!--      <span>My book:</span>-->
+<!--      <ul>-->
+<!--        <li th:each="bookDetail: ${myBookDetails}">-->
+<!--          <span th:text="${bookDetail.getDetail()}">: </span>-->
+<!--          <span th:text="${bookDetail.getChosenFeature()}"> </span>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--  <br>-->
+
+<!--</main>-->
+<!--<footer>-->
+
+<!--</footer>-->
+<!--</body>-->
+<!--</html>-->

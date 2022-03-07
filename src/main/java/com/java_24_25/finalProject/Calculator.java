@@ -1,28 +1,33 @@
 package com.java_24_25.finalProject;
 
-import com.java_24_25.finalProject.models.BookDetail;
+import com.java_24_25.finalProject.models.Book;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
 
-        private final List<BookDetail> bookDetails;
+    private List<Book> bookDetails = new ArrayList<>();
 
-        public Calculator(final List<BookDetail> bookDetails) {
-            this.bookDetails = bookDetails;
-        }
+    public double calculateTotalAmount() {
 
-        public double calculateTotalAmount() {
-            double total = 0;
-            for (final BookDetail bookDetail : bookDetails) {
-                total += bookDetail.getPrice();
-            }
-            return total;
+        Book book = new Book("hardcover", "chrome tanned", "black", "A5", 150,
+                "thin", "beige", "distress spray stain", "hand engravings");
+
+        double total = 0;
+        for (final Book bookDetail : this.bookDetails) {
+            //    total += bookDetail.getPrice();
         }
+        return total;
     }
 
 
+
     /*
+
+      public Calculator(final List<Book> bookDetails) {
+            this.bookDetails = bookDetails;
+        }
     Book book = new Book();
     double totalPrice = 0;
     double entryPrice;
@@ -40,3 +45,19 @@ public class Calculator {
     }
        // System.out.println("The total for all transactions is " + totalPrice);
     */
+
+
+//    private List<Book> bookDetails = new ArrayList<>();
+//
+//    public double calculateTotalAmount() {
+//
+//        Book book = new Book("hardcover", "chrome tanned", "black", "A5", 150,
+//                "thin","beige", "distress spray stain", "hand engravings");
+//
+//        double total = 0;
+//        for (final Book bookDetail : bookDetails) {
+//            //    total += bookDetail.getPrice();
+//        }
+//        return total;
+//    }
+}

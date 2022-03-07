@@ -26,7 +26,7 @@ public class BookDetail {
 
     public double getPrice() {
         // get price from the database
-        // make multiplactions for features
+        // make multiplication for features
         // return it for the calculator
         return 0;
     }

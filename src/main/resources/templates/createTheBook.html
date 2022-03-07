@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <title>Create your book</title>
+</head>
 <body>
 <nav>
     <a href="/">Home</a>
@@ -16,7 +17,11 @@
     <form method="get">
         <div>
             <label><b>Cover type:</b></label>
-            <select type="text" name="coverType">
+            <!--            <select class="form-select" name="coverType">-->
+            <!--                <option value="hardcover">hardcover</option>-->
+            <!--                <option value="paperback">paperback</option>-->
+            <!--            </select>-->
+            <select name="coverType">
                 <option>hardcover</option>
                 <option>paperback</option>
             </select>
@@ -94,10 +99,10 @@
                 <option>layered cover</option>
             </select>
         </div>
-    <div>
-        <label><b>Special wishes:</b></label>
-        <textarea name="customerWishes" placeholder="Leave a comment here"></textarea>
-    </div>
+        <div>
+            <label><b>Special wishes:</b></label>
+            <textarea name="customerWishes" placeholder="Leave a comment here"></textarea>
+        </div>
         <br>
         <div>
             <!----button type="view">Review the order</button---->
@@ -114,3 +119,76 @@
 </footer>
 </body>
 </html>
+
+<!--        <select class="form-select" aria-label="Default select example">-->
+<!--            <option selected>Open this select menu</option>-->
+<!--            <option value="1">One</option>-->
+<!--            <option value="2">Two</option>-->
+<!--            <option value="3">Three</option>-->
+<!--        </select>-->
+<!--        <div>-->
+<!--            <label><b>Size:</b></label>-->
+<!--            <select name="size">-->
+<!--                <option>A4</option>-->
+<!--                <option>A5</option>-->
+<!--                <option>B5</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label><b>Number of pages:</b></label>-->
+<!--            <select name="numberOfPages">-->
+<!--                <option>150</option>  &lt;!&ndash;&#45;&#45;You'll have to cast this-&ndash;&gt;-->
+<!--                <option>200</option>-->
+<!--                <option>250</option>-->
+<!--                <option>300</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label><b>Paper type:</b></label>-->
+<!--            <select name="paperType">-->
+<!--                <option>thin paper</option>-->
+<!--                <option>sketch-paper</option>-->
+<!--                <option>watercolour paper</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label><b>Paper base colour</b></label>-->
+<!--            <select name="paperBaseColour">-->
+<!--                <option>white</option>-->
+<!--                <option>beige</option>-->
+<!--                <option>sand-toned</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label><b>Vintage look</b></label>-->
+<!--            <select name="vintageLook">-->
+<!--                <option>none</option>-->
+<!--                <option>tea/coffee</option>-->
+<!--                <option>distress spray stain</option>-->
+<!--                <option>double aging of the paper</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label><b>Prints:</b></label>-->
+<!--            <select name="coverPrints">-->
+<!--                <option>none</option>-->
+<!--                <option>laser prints</option>-->
+<!--                <option>hand engraving</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label><b>Additional style elements:</b></label>-->
+<!--            <select name="additionalStyleElements">-->
+<!--                <option>none</option>-->
+<!--                <option>screw studs</option>-->
+<!--                <option>straps</option>-->
+<!--                <option>magnets</option>-->
+<!--                <option>bookmarks</option>-->
+<!--                <option>special back cover</option>-->
+<!--                <option>layered cover</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--    <div>-->
+<!--        <label><b>Special wishes:</b></label>-->
+<!--        <textarea name="customerWishes" placeholder="Leave a comment here"></textarea>-->
+<!--    </div>-->

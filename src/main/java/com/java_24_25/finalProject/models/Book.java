@@ -62,5 +62,28 @@ public class Book {
         this.orderDate = orderDate;
     }
 
+    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour, String vintageLook, String coverPrints) {
+        this.coverType = coverType;
+        this.leatherType = leatherType;
+        this.colourOfLeather = colourOfLeather;
+        this.size = size;
+        this.numberOfPages = numberOfPages;
+        this.paperType = paperType;
+        this.paperBaseColour = paperBaseColour;
+        this.vintageLook = vintageLook;
+        this.coverPrints = coverPrints;
+    }
 
+    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour, String vintageLook, String coverPrints, String additionalStyleElements) {
+        this.coverType = coverType;
+        this.leatherType = leatherType;
+        this.colourOfLeather = colourOfLeather;
+        this.size = size;
+        this.numberOfPages = numberOfPages;
+        this.paperType = paperType;
+        this.paperBaseColour = paperBaseColour;
+        this.vintageLook = vintageLook;
+        this.coverPrints = coverPrints;
+        this.additionalStyleElements = additionalStyleElements;
+    }
 }
