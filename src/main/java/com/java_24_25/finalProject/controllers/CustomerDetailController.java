@@ -1,12 +1,12 @@
 package com.java_24_25.finalProject.controllers;
 
-
 import com.java_24_25.finalProject.models.Book;
 import com.java_24_25.finalProject.services.PageDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -66,10 +66,23 @@ public class CustomerDetailController {
         return "yourBook";
     }
 
-
-
-
-
+    @PostMapping ("/the_book")
+    public String handleTheBookPage(Model model,
+                                  @RequestParam(name = "coverType", required = true) String coverType,
+                                  @RequestParam(name = "leatherType") String leatherType,
+                                  @RequestParam(name = "colourOfLeather") String colourOfLeather,
+                                  @RequestParam(name = "size") String size,
+                                  @RequestParam(name = "numberOfPages") int numberOfPages,
+                                  @RequestParam(name = "paperType") String paperType,
+                                  @RequestParam(name = "paperBaseColour") String paperBaseColour,
+                                  @RequestParam(name = "vintageLook", required = false) String vintageLook,
+                                  @RequestParam(name = "coverPrints", required = false) String coverPrints,
+                                  @RequestParam(name = "additionalStyleElements", required = false) String additionalStyleElements,
+                                  @RequestParam(name = "customerWishes", required = false) String customerWishes
+    ) {
+        return "redirect:/shipping_details";
+    }
+}
 //    @Autowired
 //    PageDataService pageDataService;
 //
@@ -153,4 +166,4 @@ public class CustomerDetailController {
 //
 //        return new Customer(setCustomerName, setCustomerAddress(), setCustomerEmail());
 //    }
-}
+//}
