@@ -47,25 +47,14 @@
 
         <div>
             <span>This order is for</span>
-            <span>XXXX</span>
             <!--        THIS WAS THE PREVIOUS VERSION AND IT WORKED-->
             <!--    <span th:text="${yourOrder.getCustomer().getCustomerName()}"></span>-->
-
-            <!--        AFTER DOING @RequestParam WHICH WAS SUPPOSED TO SEND THE CUSTOMER'S NAME HERE-->
-            <!--        IT DOESN'T-->
-            <!--                    <span th:text="${customerName}"></span>-->
-
-            <!--        XXXX is a placeholder-->
+            <span th:text="${customerName}"></span>
         </div>
 
         <div>
             <span>Shipping address:</span>
-            <span>XXXX</span>
-            <!--        AFTER DOING @RequestParam WHICH WAS SUPPOSED TO SEND THE CUSTOMER'S ADDRESS HERE-->
-            <!--        ONCE ISOLATED, THE FOLLOWING LINE DOESN'T WORK-->
-            <!--                    <span th:text="${customerAddress}"></span><br>-->
-
-            <!--        XXXX is a placeholder-->
+            <span th:text="${customerAddress}"></span><br>
             <br>
         </div>
     </section>

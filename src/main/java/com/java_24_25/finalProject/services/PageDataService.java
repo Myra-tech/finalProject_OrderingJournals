@@ -19,7 +19,7 @@ public class PageDataService {
     PageDataService() {
         availablePages.add(new Page("index", "Personalised books", "Home page", "/"));
         availablePages.add(new Page("createTheBook", "Create your book", "Choose features for your personal book", "/choose"));
-        availablePages.add(new Page("yourBook", "Your book", "Review your book order and add shipping details", "/the_book"));
+        availablePages.add(new Page("yourBook", "Your personalised book", "Review your book order and add shipping details", "/the_book"));
         availablePages.add(new Page("receipt", "Receipt", "See your order and assess its status", "/receipt"));
     }
 
