@@ -28,104 +28,80 @@ background-color: violet;
 <nav>
     <a href="/">Home</a>
 </nav>
+
 <header class="container-fluid p-3 bg-secondary text-white">
     <h2>Create your personalised book.</h2>
 </header>
 
+
 <main>
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 p-5" style="background-color:violet;"></div>
-        <div class="col-sm-6 p-5" style="background-color:violet; margin-left:80px;">
-            <form method="get" action="/the_book">
-                <div class="p-1">
-                    <label class="form-label"><b>Cover type:</b></label>
-                    <select name="coverType">
-                        <option>hardcover</option>
-                        <option>journal</option>
-                    </select>
-                </div>
-                <div class="p-1">
-                    <label><b>Leather type:</b></label>
-                    <select name="leatherType">
-                        <option>vegetable tanned</option>
-                        <option>chrome tanned</option>
-                    </select>
-                </div>
-                <div class="p-1">
-                    <label><b>Colour of the leather:</b></label>
-                    <input type="color" name="colourOfLeather">    <!-----te kaut kā savādāk tā palete jāveido---->
-                </div>
-                <div class="p-1">
-                    <label><b>Size:</b></label>
-                    <select name="size">
-                        <option>A5</option>
-                        <option>B5</option>
-                        <option>A4</option>
-                    </select>
-                </div>
-                <div class="p-1">
-                    <label><b>Number of pages:</b></label>
-                    <select name="numberOfPages">
-                        <option>100</option>
-                        <option>150</option>  <!----You'll have to cast this--->
-                        <option>200</option>
-                        <option>250</option>
-                        <option>300</option>
-                    </select>
-                </div>
-                <div class="p-1">
-                    <label><b>Paper type:</b></label>
-                    <select name="paperType">
-                        <option>sketch</option>
-                        <option>drawing</option>
-                        <option>watercolour</option>
-                    </select>
-                </div>
-                <div class="p-1">
-                    <label><b>Paper base colour</b></label>
-                    <select name="paperBaseColour">
-                        <option>white</option>
-                        <option>beige</option>
-                        <option>sand</option>
-                    </select>
-                </div>
-                <div class="p-1">
-                    <label><b>Vintage page look</b></label>
-                    <select name="vintageLook">
-                        <option>none</option>
-                        <option>tea</option>
-                        <option>coffee</option>
-                        <option>spray</option>
-                        <option>tea + spray</option>
-                        <option>coffee + spray</option>
-                    </select>
-                </div>
-                <div class="p-1">
-                    <label><b>Prints:</b></label>
-                    <select name="coverPrints">
-                        <option>none</option>
-                        <option>laser prints</option>
-                        <option>hand engraving</option>
-                    </select>
-                </div>
-                <div class="p-1">
-                    <label><b>Additional style elements:</b></label>
-                    <select name="additionalStyleElements">
-                        <option>none</option>
-                        <option>screw studs</option>
-                        <option>straps</option>
-                        <option>magnets</option>
-                        <option>bookmarks</option>
-                        <option>special back cover</option>
-                        <option>layered cover</option>
-                    </select>
-                </div>
-                <div class="p-1">
-                    <label><b>Special wishes:</b></label>
-                    <textarea name="customerWishes" placeholder="Leave a comment here"></textarea>
-                </div>
-            </form>
+    <form method="get" action="/the_book">
+<!--    <form method="get" action="/create">-->
+
+        <div>
+            <label><b>Cover type:</b></label>
+            <!--            <select class="form-select" name="coverType">-->
+            <!--                <option value="hardcover">hardcover</option>-->
+            <!--                <option value="paperback">paperback</option>-->
+            <!--            </select>-->
+            <select name="coverType">
+                <option>hardcover</option>
+                <option>paperback</option>
+            </select>
+        </div>
+        <div>
+            <label><b>Leather type:</b></label>
+            <select name="leatherType">
+                <option>vegetable tanned</option>
+                <option>chrome tanned</option>
+            </select>
+        </div>
+        <div>
+            <label><b>Colour of the leather:</b></label>
+            <input type="color" name="colourOfLeather">    <!-----te kaut kā savādāk tā palete jāveido---->
+        </div>
+        <div>
+            <label><b>Size:</b></label>
+            <select name="size">
+                <option>A4</option>
+                <option>A5</option>
+                <option>B5</option>
+            </select>
+        </div>
+        <div>
+            <label><b>Number of pages:</b></label>
+            <select name="numberOfPages">
+                <option>150</option>  <!----You'll have to cast this--->
+                <option>200</option>
+                <option>250</option>
+                <option>300</option>
+            </select>
+        </div>
+        <div>
+            <label><b>Paper type:</b></label>
+            <select name="paperType">
+                <option>thin paper</option>
+                <option>sketch-paper</option>
+                <option>watercolour paper</option>
+            </select>
+        </div>
+        <div>
+            <label><b>Paper base colour</b></label>
+            <select name="paperBaseColour">
+                <option>white</option>
+                <option>beige</option>
+                <option>sand-toned</option>
+            </select>
+        </div>
+        <div>
+            <label><b>Vintage look</b></label>
+            <select name="vintageLook">
+                <option>none</option>
+                <option>tea/coffee</option>
+                <option>distress spray stain</option>
+                <option>double aging of the paper</option>
+            </select>
+
         </div>
             <div class="col-sm-3 p-5" style="background-color:violet; margin-left:80px;"></div>
     </div>
@@ -142,8 +118,8 @@ background-color: violet;
                 </button>
             </div>
         </form>
-
     </div>
+    </form>
 </main>
 <footer>
 
