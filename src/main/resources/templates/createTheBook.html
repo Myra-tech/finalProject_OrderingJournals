@@ -10,11 +10,14 @@
     <a href="/">Home</a>
 </nav>
 <header>
-    <h2>Create your personalised book.</h2>
+    <h2 th:text="${projectTitle}"></h2>
+    <h3 th:text="${pageInfo.getPageDescription()}"></h3>
+<!--    <h2>Create your personalised book.</h2>-->
 </header>
 
 <main>
     <form method="get" action="/the_book">
+<!--    <form method="get" action="/create">-->
 
         <div>
             <label><b>Cover type:</b></label>

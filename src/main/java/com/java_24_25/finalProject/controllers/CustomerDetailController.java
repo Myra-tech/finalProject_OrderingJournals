@@ -14,7 +14,6 @@ public class CustomerDetailController {
 
     @Autowired
     PageDataService pageDataService;
-    BookController bookController;
 
     @GetMapping("/the_book")
     public String showTheBookPage(Model model,
