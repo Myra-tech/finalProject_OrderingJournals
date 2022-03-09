@@ -1,12 +1,10 @@
 package com.java_24_25.finalProject.controllers;
 
-import com.java_24_25.finalProject.models.Book;
 import com.java_24_25.finalProject.services.PageDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BookController {
@@ -23,12 +21,12 @@ public class BookController {
         return "createTheBook";
     }
 
-//    THIS DOES NOT REVEAL THE USER
-    @PostMapping("/create")
-    public String handleClientChoices(Book book) {
-        System.out.println(book);
-        return "redirect:createTheBook";
-    }
+////    THIS DOES NOT REVEAL THE USER
+//    @PostMapping("/create")
+//    public String handleClientChoices(Book book) {
+//        System.out.println(book);
+//        return "redirect:createTheBook";
+//    }
 }
 
 //@Controller
