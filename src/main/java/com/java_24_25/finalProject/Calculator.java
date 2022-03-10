@@ -11,8 +11,10 @@ public class Calculator {
 
     public double calculateTotalAmount() {
 
-        Book book = new Book("hardcover", "chrome tanned", "black", "A5", 150,
-                "thin", "beige", "distress spray stain", "hand engravings");
+        Book book = new Book("My book","hardcover", "chrome", "A5", 150,
+                "sketch", "beige", "black", "none",
+                "spray", "none","wrappingStrap", "none", "none",
+                "null", "null", "no comment", "I want unicorn in front page!");
 
         double total = 0;
         for (final Book bookDetail : this.bookDetails) {

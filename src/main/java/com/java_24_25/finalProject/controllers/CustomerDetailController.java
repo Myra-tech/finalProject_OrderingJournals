@@ -11,24 +11,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CustomerDetailController {
-
+    Book book;
     @Autowired
     PageDataService pageDataService;
 
     @GetMapping("/the_book")
     public String showTheBookPage(Model model,
+                                  @RequestParam(name = "bookName", required = true) String bookName,
                                   @RequestParam(name = "coverType", required = true) String coverType,
-                                  @RequestParam(name = "leatherType") String leatherType,
-                                  @RequestParam(name = "colourOfLeather") String colourOfLeather,
-                                  @RequestParam(name = "size") String size,
-                                  @RequestParam(name = "numberOfPages") int numberOfPages,
-                                  @RequestParam(name = "paperType") String paperType,
-                                  @RequestParam(name = "paperBaseColour") String paperBaseColour,
-                                  @RequestParam(name = "vintageLook", required = false) String vintageLook,
-                                  @RequestParam(name = "coverPrints", required = false) String coverPrints,
-                                  @RequestParam(name = "additionalStyleElements", required = false) String additionalStyleElements,
-                                  @RequestParam(name = "customerWishes", required = false) String customerWishes
-    ) {
+                                  @RequestParam(name = "leatherType", required = true) String leatherType,
+                                  @RequestParam(name = "size", required = true) String size,
+                                  @RequestParam(name = "numberOfPages", required = true) int numberOfPages,
+                                  @RequestParam(name = "paperType", required = true) String paperType,
+                                  @RequestParam(name = "paperColor", required = true) String paperColor,
+                                  @RequestParam(name = "leatherColor", required = true) String leatherColor,
+                                  @RequestParam(name = "leatherColorComment,", required = true) String leatherColorComment,
+
+                                  @RequestParam(name = "vintagePaper", required = false) String vintagePaper,
+                                  @RequestParam(name = "coverLayer", required = false) String coverLayer,
+                                  @RequestParam(name = "closure", required = false) String closure,
+                                  @RequestParam(name = "print", required = false) String print,
+                                  @RequestParam(name = "printComment", required = false) String printComment,
+                                  @RequestParam(name = "bookmark", required = false) String bookmark,
+                                  @RequestParam(name = "screwStuds", required = false) String screwStuds,
+                                  @RequestParam(name = "screwStudComment", required = false) String screwStudComment,
+                                  @RequestParam(name = "generalComment", required = false) String generalComment) {
 
         System.out.println(pageDataService.getProjectTitle()); // shows in the console that it works
 
@@ -39,130 +46,48 @@ public class CustomerDetailController {
         // then html can use this to display a page "yourBook"
 
         System.out.println("Book's input parameters are being extracted." + '\''
+                + "The name of the book: " + bookName + '\''
                 + "Cover type: " + coverType + '\''
                 + "Leather type: " + leatherType + '\''
-                + "Colour of the leather: " + colourOfLeather + '\''
                 + "Size of the book: " + size + '\''
                 + "Number of pages: " + numberOfPages + '\''
                 + "Paper type: " + paperType + '\''
-                + "Paper base colour: " + paperBaseColour + '\''
-                + "Vintage look: " + vintageLook + '\''
-                + "Cover prints: " + coverPrints + '\''
-                + "Additional style elements: " + additionalStyleElements + '\''
-                + "Customer wishes: " + customerWishes);
+                + "Paper base colour: " + paperColor + '\''
+                + "Colour of the leather: " + leatherColor + '\''
+                + "Comment about the color of the leather" + leatherColorComment + '\''
+                + "Vintage look: " + vintagePaper + '\''
+                + "Layers on the cover" + coverLayer + '\''
+                + "Book closure system" + closure + '\''
+                + "Cover prints: " + print + '\''
+                + "Comment about the prints" + printComment + '\''
+                + "Bookmark" + bookmark + '\''
+                + "Screw stud decoration" + screwStuds + '\''
+                + "Comment about the screw studs" + screwStudComment + '\''
+                + "Any other comment about the design" + generalComment);
 
-        Book book = new Book(coverType, leatherType, colourOfLeather, size, numberOfPages, paperType, paperBaseColour, coverPrints, additionalStyleElements);
-        model.addAttribute("coverType", coverType);
-        model.addAttribute("leatherType", leatherType);
-        model.addAttribute("colourOfLeather", colourOfLeather);
-        model.addAttribute("size", size);
-        model.addAttribute("numberOfPages", numberOfPages);
-        model.addAttribute("paperType", paperType);
-        model.addAttribute("paperBaseColour", paperBaseColour);
-        model.addAttribute("coverPrints", coverPrints);
-        model.addAttribute("additionalStyleElements", additionalStyleElements);
+        Book book = new Book(bookName, coverType, leatherType, size, numberOfPages, paperType, paperColor,
+                leatherColor, leatherColorComment, vintagePaper, coverLayer, closure, print, printComment, bookmark,
+                screwStuds, screwStudComment, generalComment);
+        model.addAttribute("bookName",bookName);
+        model.addAttribute("coverType",coverType);
+        model.addAttribute("leatherType",leatherType);
+        model.addAttribute("size",size);
+        model.addAttribute("numberOfPages",numberOfPages);
+        model.addAttribute("paperType",paperType);
+        model.addAttribute("paperColor",paperColor);
+        model.addAttribute("leatherColor",leatherColor);
+        model.addAttribute("leatherColorComment,",leatherColorComment);
+        model.addAttribute("vintagePaper",vintagePaper);
+        model.addAttribute("coverLayer",coverLayer);
+        model.addAttribute("closure",closure);
+        model.addAttribute("print",print);
+        model.addAttribute("printComment",printComment);
+        model.addAttribute("bookmark",bookmark);
+        model.addAttribute("screwStuds",screwStuds);
+        model.addAttribute("screwStudComment",screwStudComment);
+        model.addAttribute("generalComment",generalComment);
 
-        return "yourBook";
+        return"yourBook";
+        }
+
     }
-
-    @PostMapping ("/the_book")
-    public String handleTheBookPage(Model model,
-                                  @RequestParam(name = "coverType", required = true) String coverType,
-                                  @RequestParam(name = "leatherType") String leatherType,
-                                  @RequestParam(name = "colourOfLeather") String colourOfLeather,
-                                  @RequestParam(name = "size") String size,
-                                  @RequestParam(name = "numberOfPages") int numberOfPages,
-                                  @RequestParam(name = "paperType") String paperType,
-                                  @RequestParam(name = "paperBaseColour") String paperBaseColour,
-                                  @RequestParam(name = "vintageLook", required = false) String vintageLook,
-                                  @RequestParam(name = "coverPrints", required = false) String coverPrints,
-                                  @RequestParam(name = "additionalStyleElements", required = false) String additionalStyleElements,
-                                  @RequestParam(name = "customerWishes", required = false) String customerWishes
-    ) {
-        return "redirect:/shipping_details";
-    }
-}
-//    @Autowired
-//    PageDataService pageDataService;
-//
-//    @GetMapping("/the_book")
-//    public String showTheBookPage(Model model,
-//                                  @RequestParam(name = "customerName", required = true) String customerName,
-//                                  @RequestParam(name = "customerAddress") String customerAddress,
-//                                  @RequestParam(name = "customerEmail") String customerEmail) {
-//
-//        System.out.println(pageDataService.getProjectTitle()); // shows in the console that it works
-//
-//        // Now here we add it as an attribute what will be shipped to the html.
-//        model.addAttribute("projectTitle", pageDataService.getProjectTitle());
-//        model.addAttribute("pageInfo", pageDataService.getPage("yourBook"));
-//        model.addAttribute("availablePages", pageDataService.getPages());
-//        // then htlm can use this to display a page "yourBook"
-//
-////        Customer customer = new Customer(customerName, customerAddress, customerEmail);
-////        model.addAttribute("customerName", customer.getCustomerName());
-////        model.addAttribute("customerAddress", customer.getCustomerAddress());
-////        model.addAttribute("customerEmail", customer.getCustomerEmail());
-//////        And this should travel to the "receipt" page
-//
-//        return "yourBook";
-//    }
-
-//    @GetMapping("/the_book")
-//    // I wanted to place @PostMapping here, but the page immediately threw an error. And, yes, I did change it to "post" in the html document also.
-//    public String showTheBookPage(Model model) {
-//
-//        model.addAttribute("theChosenCoverType", "hardcover");
-//        model.addAttribute("theChosenLeatherType", "vegetable tanned");
-//        model.addAttribute("theChosenColourOfLeather", "black");  // colour hex black #000
-//
-//        model.addAttribute("yourOrder",
-//                new Orders(1,
-//                        new Customer("Lilian Walko", "20 Kildare Street, D2 F8HK, Dublin, Ireland", "lilianwalko@email.com"),
-//                        200,
-//                        true,
-//                        OrderStatus.PLACED));
-//
-//        List<BookDetail> myBookDetails = new ArrayList<>();
-//
-//        myBookDetails.add(new BookDetail("Cover type:", "hardcover", 50));
-//        myBookDetails.add(new BookDetail("Leather type:", "chrome tanned", 20));
-//        myBookDetails.add(new BookDetail("Colour of the leather:", "black", 0));
-//        model.addAttribute("myBookDetails", myBookDetails);
-//
-//        System.out.println("The user has submitted the order.");
-//
-//        return "yourBook";
-//    }
-//
-//    @GetMapping("/shipping_details")
-//    public String handleCustomerInformation(
-//            Model model,
-//            @RequestParam(name="customerName") String customerName,
-//            @RequestParam(name="customerAddress") String customerAddress,
-//            @RequestParam(name="customerEmail") String customerEmail
-//    ) {
-//        // THE FOLLOWING THING WORKS. THE FOLLOWING STATEMENT HAS RECEIVED THE INPUT.
-//        System.out.println("New customer details have arrived from " + customerName + ".");
-//
-//        // THIS MIGHT WORK AS WELL, IT'S JUST THAT IT DOES NOT GO INTO THE RECEIPT.
-//        model.addAttribute("Customer name: ", customerName);
-//        model.addAttribute("customerAddress: ", customerAddress);  // this variation makes no difference in the receipt page
-//        model.addAttribute("Customer address: ", customerEmail);
-//
-//        return "receipt";
-//    }
-
-//    **************************************
-
-//    @GetMapping("/shipping_details")
-//    public void handleCustomerInformation(
-//            Model model,
-//            @RequestParam(name="customerName") Customer.setCustomerName(),
-//    @RequestParam(name="customerAddress") Customer setCustomerAddress(),
-//    @RequestParam(name="customerEmail") Customer setCustomerEmail()
-//            ) {
-//
-//        return new Customer(setCustomerName, setCustomerAddress(), setCustomerEmail());
-//    }
-//}

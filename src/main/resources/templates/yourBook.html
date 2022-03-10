@@ -17,57 +17,27 @@
 
 <main>
 
-<!--    MAKE BOOK ENTRIES INTO A LOOP-->
-<!--    <section>-->
-<!--            <div>-->
-<!--              <span>My book:</span>-->
-<!--              <ul>-->
-<!--                <li th:each="bookDetail: ${myBookDetails}">-->
-<!--                  <span th:text="${bookDetail.getDetail()}">: </span>-->
-<!--                  <span th:text="${bookDetail.getChosenFeature()}"> </span>-->
-<!--                </li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </section>-->
-
     <section>
         <div>
             <span><b>Cover type:</b></span>
             <span th:text="${coverType}"></span>
         </div>
     </section>
-    <!--    <section>-->
-    <!--        <div>-->
-    <!--            <span><b>Cover type:</b></span>-->
-    <!--            <span th:text="${theChosenCoverType}"></span>-->
-    <!--            Neskatoties, ko es ievadu /create lapā, Thymeleaf ņem to "${coverType}" no model.addAttribute("coverType", "hardcover");-->
-    <!--            tad kad Tu dabūsi @RequestParam working, the coverType value should come from JAVA-->
-    <!--        </div>-->
-    <!--    </section>-->
+
     <section>
         <div>
             <span><b>Leather type:</b></span>
             <span th:text="${leatherType}"></span>
         </div>
     </section>
-    <!--    <section>-->
-    <!--        <div>-->
-    <!--            <span><b>Leather type:</b></span>-->
-    <!--            <span th:text="${theChosenLeatherType}"></span>-->
-    <!--        </div>-->
-    <!--    </section>-->
+
     <section>
         <div>
             <span><b>Colour of the leather:</b></span>
             <span th:text="${colourOfLeather}"></span>
         </div>
     </section>
-    <!--    <section>-->
-    <!--        <div>-->
-    <!--            <span><b>Colour of the leather:</b></span>-->
-    <!--            <span th:text="${theChosenColourOfLeather}"></span>-->
-    <!--        </div>-->
-    <!--    </section>-->
+
     <section>
         <div>
             <span><b>Size:</b></span>
@@ -104,34 +74,6 @@
             <span th:text="${additionalStyleElements}"></span>
         </div>
     </section>
-    <!--    <section>-->
-    <!--        <div>-->
-    <!--            <h2>Your personalised book.</h2>-->
-    <!--            <ul>-->
-    <!--                <li th:each="myBookDetail: ${myBookDetails}">-->
-    <!--                    <span th:text="${myBookDetail.getDetail()}"></span>-->
-    <!--                    <span th:text="${myBookDetail.getChosenFeature()}"></span>-->
-    <!--                </li>-->
-    <!--            </ul>-->
-    <!--        </div>-->
-    <!--    </section>-->
-
-
-    <!--    <br>-->
-    <!--    <section>-->
-    <!--        <div>-->
-    <!--            <span>-&#45;&#45; Order</span>-->
-    <!--            <span>number</span>-->
-    <!--            <span th:text="${yourOrder.getOrderNumber()}"></span>-->
-    <!--            <span>for</span>-->
-    <!--            <span th:text="${yourOrder.getCustomer().getCustomerName()}"></span>-->
-    <!--            <span>has been</span>-->
-    <!--            <span th:text="${#strings.toLowerCase(yourOrder.getOrderStatus())}"></span>-->
-    <!--            <span>-&#45;&#45;</span>-->
-    <!--        </div>-->
-    <!--    </section>-->
-
-    <!--    </section>-->
 
     <h2>Please enter your personal details.</h2>
 
@@ -156,53 +98,7 @@
         </div>
     </form>
     <br>
-<!--    <h3>Thanks for placing the order.</h3>-->
-    <!--        <div>-->
-    <!--            <span>Your order number is</span>-->
-    <!--            <span th:text="${yourOrder.getOrderNumber()}">.</span><br>-->
-    <!--            <span>Click</span>-->
-    <!--            <nav>-->
-    <!--                <a href="/receipt">here</a>-->
-    <!--            </nav>-->
-    <!--            <span>to see the details of your order.</span>-->
-    <!--        </div>-->
 
-    <!--        <h2>Please enter your personal details.</h2>-->
-
-
-    <!--        <form method="get">     &lt;!&ndash;&#45;&#45;VARBŪT NĒ. TIE KAS ZIN PASKATĪTIES ADRESES RINDĀ ZI KĀ TO IZDABŪT O INSPECT.-->
-    <!--                            Tu lietosi POST metodi te, lai klienta detaļas neparādītos web adreses ailē.&#45;&#45;&ndash;&gt;-->
-    <!--            <div>-->
-    <!--                <label>Name, surname</label>-->
-    <!--                <input type="text" name="customerName">-->
-    <!--            </div>-->
-    <!--            <div>-->
-    <!--                <label>Shipping address:</label>-->
-    <!--                <input type="text" name="customerAddress">-->
-    <!--            </div>-->
-    <!--            <div>-->
-    <!--                <label>Email:</label>-->
-    <!--                <input type="email" name="customerEmail">-->
-    <!--            </div>-->
-    <!--            <br>-->
-    <!--            <div>-->
-    <!--                &lt;!&ndash;&#45;&#45;button type="view">Review the order</button&#45;&#45;&ndash;&gt;-->
-    <!--                <button type="submit">Submit</button>-->
-    <!--            </div>-->
-
-    <!--            <br>-->
-    <!--            <h3>Thanks for placing the order.</h3>-->
-    <!--            <div>-->
-    <!--                <span>Your order number is</span>-->
-    <!--                <span th:text="${yourOrder.getOrderNumber()}">.</span><br>-->
-    <!--                <span>Click</span>-->
-    <!--                <nav>-->
-    <!--                    <a href="/receipt">here</a> &lt;!&ndash;-&#45;&#45;nesapratu, kā šo visu dabūt vienā rindā&#45;&#45;&ndash;&gt;-->
-    <!--                </nav>-->
-    <!--                <span>to see the details of your order.</span>-->
-    <!--            </div>-->
-
-    <!--        </form>-->
 </main>
 <footer>
 

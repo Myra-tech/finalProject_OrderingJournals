@@ -10,95 +10,69 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 public class Book {
+//MAIN DETAILS
+    private String bookName;
     private String coverType;
     private String leatherType;
-    private String colourOfLeather;
-
     private String size;
     private int numberOfPages;
     private String paperType;
-
-    private String paperBaseColour;
-    private String vintageLook;
-    private String coverPrints;
-    private String additionalStyleElements;
-    private String customerWishes;
-
+    private String paperColor;
+    private String leatherColor;
+    private String leatherColorComment;;
+//OPTIONAL DETAILS
+    private String vintagePaper;
+    private String coverLayer;
+    private String closure;
+    private String print;
+    private String printComment;
+    private String bookmark;
+    private String screwStuds;
+    private String screwStudComment;
+    private String generalComment;
+//ORDERING DETAIL
     private Date orderDate;
 
-    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour, Date orderDate) {
+    public Book(String bookName, String coverType, String leatherType, String size, int numberOfPages,
+                String paperType, String paperColor, String leatherColor, String leatherColorComment,
+                String vintagePaper, String coverLayer, String closure, String print, String printComment,
+                String bookmark, String screwStuds, String screwStudComment, String generalComment) {
+        this.bookName = bookName;
         this.coverType = coverType;
         this.leatherType = leatherType;
-        this.colourOfLeather = colourOfLeather;
         this.size = size;
         this.numberOfPages = numberOfPages;
         this.paperType = paperType;
-        this.paperBaseColour = paperBaseColour;
-        this.orderDate = orderDate;
+        this.paperColor = paperColor;
+        this.leatherColor = leatherColor;
+        this.leatherColorComment = leatherColorComment;
+        this.vintagePaper = vintagePaper;
+        this.coverLayer = coverLayer;
+        this.closure = closure;
+        this.print = print;
+        this.printComment = printComment;
+        this.bookmark = bookmark;
+        this.screwStuds = screwStuds;
+        this.screwStudComment = screwStudComment;
+        this.generalComment = generalComment;
     }
 
-    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour, String vintageLook, Date orderDate) {
+    public Book(String bookName, String coverType, String leatherType, String size, int numberOfPages, String paperType,
+                String paperColor, String leatherColor, String vintagePaper, String coverLayer, String closure,
+                String print, String bookmark, String screwStuds) {
+        this.bookName = bookName;
         this.coverType = coverType;
         this.leatherType = leatherType;
-        this.colourOfLeather = colourOfLeather;
         this.size = size;
         this.numberOfPages = numberOfPages;
         this.paperType = paperType;
-        this.paperBaseColour = paperBaseColour;
-        this.vintageLook = vintageLook;
-        this.orderDate = orderDate;
+        this.paperColor = paperColor;
+        this.leatherColor = leatherColor;
+        this.vintagePaper = vintagePaper;
+        this.coverLayer = coverLayer;
+        this.closure = closure;
+        this.print = print;
+        this.bookmark = bookmark;
+        this.screwStuds = screwStuds;
     }
-
-    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour, String vintageLook, String coverPrints, Date orderDate) {
-        this.coverType = coverType;
-        this.leatherType = leatherType;
-        this.colourOfLeather = colourOfLeather;
-        this.size = size;
-        this.numberOfPages = numberOfPages;
-        this.paperType = paperType;
-        this.paperBaseColour = paperBaseColour;
-        this.vintageLook = vintageLook;
-        this.coverPrints = coverPrints;
-        this.orderDate = orderDate;
-    }
-
-    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour, String vintageLook, String coverPrints) {
-        this.coverType = coverType;
-        this.leatherType = leatherType;
-        this.colourOfLeather = colourOfLeather;
-        this.size = size;
-        this.numberOfPages = numberOfPages;
-        this.paperType = paperType;
-        this.paperBaseColour = paperBaseColour;
-        this.vintageLook = vintageLook;
-        this.coverPrints = coverPrints;
-    }
-
-    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour, String vintageLook, String coverPrints, String additionalStyleElements) {
-        this.coverType = coverType;
-        this.leatherType = leatherType;
-        this.colourOfLeather = colourOfLeather;
-        this.size = size;
-        this.numberOfPages = numberOfPages;
-        this.paperType = paperType;
-        this.paperBaseColour = paperBaseColour;
-        this.vintageLook = vintageLook;
-        this.coverPrints = coverPrints;
-        this.additionalStyleElements = additionalStyleElements;
-    }
-
-    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour, String vintageLook, String coverPrints, String additionalStyleElements, String customerWishes) {
-        this.coverType = coverType;
-        this.leatherType = leatherType;
-        this.colourOfLeather = colourOfLeather;
-        this.size = size;
-        this.numberOfPages = numberOfPages;
-        this.paperType = paperType;
-        this.paperBaseColour = paperBaseColour;
-        this.vintageLook = vintageLook;
-        this.coverPrints = coverPrints;
-        this.additionalStyleElements = additionalStyleElements;
-        this.customerWishes = customerWishes;
-    }
-
 }

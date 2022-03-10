@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
-
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Create your book</title>
+    <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
 h5 {
   background-color: violet;
-  padding-top: 80px;
-  padding-right: 80px;
-  padding-bottom: 80px;
+  padding-top: 0px;
+  padding-right: 40px;
+  padding-bottom: 40px;
   padding-left: 180px;
-  text-align: center;
+  text-align: left;
+}
+h2{
+background-color: violet;
+text-align: center;
 }
 button{
 background-color: violet;
@@ -25,104 +29,276 @@ background-color: violet;
 </style>
 </head>
 <body>
-<nav>
-    <a href="/">Home</a>
-</nav>
-
 <header class="container-fluid p-3 bg-secondary text-white">
-    <h2>Create your personalised book.</h2>
+    <h1 th:text="${appTitle}"></h1>
+    <form method="get" action="/">
+        <div class="row mb-3">
+            <button type="submit" class="btn btn-dark p-3">
+                Back to home!
+            </button>
+        </div>
+    </form>
 </header>
-
-
 <main>
-    <form method="get" action="/the_book">
-<!--    <form method="get" action="/create">-->
 
-        <div>
-            <label><b>Cover type:</b></label>
-            <!--            <select class="form-select" name="coverType">-->
-            <!--                <option value="hardcover">hardcover</option>-->
-            <!--                <option value="paperback">paperback</option>-->
-            <!--            </select>-->
-            <select name="coverType">
-                <option>hardcover</option>
-                <option>paperback</option>
-            </select>
-        </div>
-        <div>
-            <label><b>Leather type:</b></label>
-            <select name="leatherType">
-                <option>vegetable tanned</option>
-                <option>chrome tanned</option>
-            </select>
-        </div>
-        <div>
-            <label><b>Colour of the leather:</b></label>
-            <input type="color" name="colourOfLeather">    <!-----te kaut kā savādāk tā palete jāveido---->
-        </div>
-        <div>
-            <label><b>Size:</b></label>
-            <select name="size">
-                <option>A4</option>
-                <option>A5</option>
-                <option>B5</option>
-            </select>
-        </div>
-        <div>
-            <label><b>Number of pages:</b></label>
-            <select name="numberOfPages">
-                <option>150</option>  <!----You'll have to cast this--->
-                <option>200</option>
-                <option>250</option>
-                <option>300</option>
-            </select>
-        </div>
-        <div>
-            <label><b>Paper type:</b></label>
-            <select name="paperType">
-                <option>thin paper</option>
-                <option>sketch-paper</option>
-                <option>watercolour paper</option>
-            </select>
-        </div>
-        <div>
-            <label><b>Paper base colour</b></label>
-            <select name="paperBaseColour">
-                <option>white</option>
-                <option>beige</option>
-                <option>sand-toned</option>
-            </select>
-        </div>
-        <div>
-            <label><b>Vintage look</b></label>
-            <select name="vintageLook">
-                <option>none</option>
-                <option>tea/coffee</option>
-                <option>distress spray stain</option>
-                <option>double aging of the paper</option>
-            </select>
+    <h3 class="text-secondary mb-3" th:text="${pageInfo.getPageTitle()}"></h3>
+    <!--BASIC OPTIONS-->
+    <div class="row justify-content-left my-5">
+        <div class="col-lg-1 p-5"></div>
+        <div class="col-lg-4 p-5">
+            <h5>Choose basics</h5>
+            <form>
+                <label class="form-label">Name your book</label>
+                <input type="name" class="form-control" name="bookName" placeholder="e.g. myBook">
 
+                <label class="form-label">Cover type</label>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book-half"></i>
+                    </span>
+                    <select class="form-select" name="coverType">
+                        <option value="hardcover">hardcover</option>
+                        <option value="journal">journal</option>
+                    </select>
+                    <!--Tooltip-->
+                    <span class="input-group-text">
+                        <span class="tt" data-bs-placement="right" title="journal type is soft cover type cover">
+                            <i class="bi bi-question-circle text-muted"></i>
+                        </span>
+                    </span>
+                </div>
+
+                <label class="form-label">Leather type</label>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book-half"></i>
+                    </span>
+                    <select class="form-select" name="leatherType">
+                        <option value="chrome">chrome tanned</option>
+                        <option value="vegetable">vegetable tanned</option>
+                    </select>
+                    <!--Tooltip-->
+                    <span class="input-group-text">
+                        <span class="tt" data-bs-placement="right"
+                              title="chrome tanned: factory tanned leather for simple designs, vegetable tanned:
+                              high quality leather with possibility for multi-color,color with shades and hand engravings">
+                            <i class="bi bi-question-circle text-muted"></i>
+                        </span>
+                    </span>
+                </div>
+
+                <label class="form-label">Size</label>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book"></i>
+                    </span>
+                    <select class="form-select" name="size">
+                        <option value="A5">A5</option>
+                        <option value="B5">B5</option>
+                        <option value="A4">A4</option>
+                    </select>
+                    <!--Tooltip-->
+                    <span class="input-group-text">
+                        <span class="tt" data-bs-placement="right"
+                              title="A5 (14,8x21 cm2), B5 (17,6x25 cm2), A4 (21x29,7 cm2)">
+                            <i class="bi bi-question-circle text-muted"></i>
+                        </span>
+                    </span>
+                </div>
+
+                <label class="form-label">How many pages</label>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book"></i>
+                    </span>
+                    <select class="form-select" name="numberOfPages">
+                        <option value="100">100</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                        <option value="250">250</option>
+                        <option value="300">300</option>
+                    </select>
+                    <!--Tooltip-->
+                    <span class="input-group-text">
+                        <span class="tt" data-bs-placement="right"
+                              title="suggestion: at least 160 pages for sketch and not more that 200 for watercolor paper types">
+                            <i class="bi bi-question-circle text-muted"></i>
+                        </span>
+                    </span>
+                </div>
+
+                <label class="form-label">Paper type</label>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book"></i>
+                    </span>
+                    <select class="form-select" name="paperType">
+                        <option value="sketch">sketch paper</option>
+                        <option value="drawing">drawing paper</option>
+                        <option value="watercolor">watercolor paper</option>
+                    </select>
+                    <!--Tooltip-->
+                    <span class="input-group-text">
+                        <span class="tt" data-bs-placement="right"
+                              title="120g/m (sketch), 160g/m (drawing)">
+                            <i class="bi bi-question-circle text-muted"></i>
+                        </span>
+                    </span>
+                </div>
+
+                <label class="form-label">Basic paper color</label>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book"></i>
+                    </span>
+                    <select class="form-select" name="paperColor">
+                        <option value="white">white</option>
+                        <option value="beige">beige</option>
+                        <option value="sand">sand</option>
+                    </select>
+                    <!--Tooltip-->
+                    <span class="input-group-text">
+                        <span class="tt" data-bs-placement="right"
+                              title="only 'white' option for watercolor paper type">
+                            <i class="bi bi-question-circle text-muted"></i>
+                        </span>
+                    </span>
+                </div>
+
+                <label class="form-label">Leather color</label>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book-half"></i>
+                    </span>
+                    <select class="form-select" name="leatherColor">
+                        <option value="natural">natural</option>
+                        <option value="caramel">caramel</option>
+                        <option value="darkBrown">dark brown</option>
+                        <option value="black">black</option>
+                        <option value="red">red</option>
+                        <option value="multi">multi-colored</option>
+                        <option value="whiteLeather">white</option>
+                    </select>
+                    <!--Tooltip-->
+                    <span class="input-group-text">
+                        <span class="tt" data-bs-placement="right"
+                              title="'natural', 'multi-colored' and 'white' options only for vegetable tanned leather cover">
+                            <i class="bi bi-question-circle text-muted"></i>
+                        </span>
+                    </span>
+                </div>
+
+                <label class="form-label">
+                    Please comment below: if you choose multi-colored or need any specific color!
+                </label>
+                <textarea class="form-control" name="leatherColorComment" style="height: 100px"></textarea>
+            </form>
         </div>
-            <div class="col-sm-3 p-5" style="background-color:violet; margin-left:80px;"></div>
+        <div class="col-lg-2 p-5"></div>
+        <!--ADVANCED OPTIONS-->
+        <div class="col-lg-4 p-5">
+            <h5>Choose optionals</h5>
+            <label class="form-label">Vintage look for pages with ageing effect</label>
+            <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book"></i></span>
+                <select class="form-select" name="vintagePaper">
+                    <option value="noAgeing">none</option>
+                    <option value="teaAgeing">tea</option>
+                    <option value="coffeeAgeing">coffee</option>
+                    <option value="sprayAgeing">spray on the edges</option>
+                    <option value="teaAndSpray"> tea + spray</option>
+                    <option value="coffeeAndSpray"> coffee + spray</option>
+                </select>
+            </div>
+
+            <label class="form-label">Layer on the cover (only for hardcover book):</label>
+            <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book-half"></i></span>
+                <select class="form-select" name="coverLayer">
+                    <option value="noLayer">none</option>
+                    <option value="borderFront">border layer on front cover</option>
+                    <option value="middleFront">middle layer on front cover</option>
+                    <option value="borderBoth">border layer on both covers</option>
+                    <option value="middleBoth">middle layer on both covers</option>
+                </select>
+            </div>
+
+            <label class="form-label">Book closure system</label>
+            <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book-half"></i></span>
+                <select class="form-select" name="closure">
+                    <option value="noClosure">none</option>
+                    <option value="twoBuckles">two buckles</option>
+                    <option value="wrappingStrap">one long wrapping strap</option>
+                    <option value="magnet">a magnet</option>
+                    <option value="pushButton">push button</option>
+                </select>
+            </div>
+
+            <label class="form-label">Drawings, prints, carvings on cover</label>
+            <label class="form-label">Could be text, silhouette drawing or painting</label>
+            <label class="form-label">For chrome tanned leather 'laser print' is recommended option</label>
+            <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-book-half"></i></span>
+                <select class="form-select" name="print">
+                    <option value="noPrints">none</option>
+                    <option value="laser">laser print</option>
+                    <option value="brush">brush painting or writing</option>
+                    <option value="carving">hand carving</option>
+                </select>
+            </div>
+            <label class="form-label">* Please comment below:</label>
+            <label class="form-label">size, placement, text or link on image</label>
+            <textarea class="form-control" name="printComment" style="height: 50px"></textarea><br>
+
+            <label class="form-label">
+                Additional details:
+            </label>
+            <div class="checkbox-container">
+                <input type="checkbox" name="bookmark">
+                <label>built in bookmark</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" name="screwStuds">
+                <label> screw studs for decoration</label>
+            </div>
+            <label class="form-label">* Please comment below:</label>
+            <label class="form-label">number and placement for screw studs</label>
+            <textarea class="form-control" name="screwStudComment" style="height: 50px"></textarea><br>
+
+            <label class="form-label">Any other useful comment is welcome here:</label>
+            <textarea class="form-control" name="generalComment" style="height: 50px"></textarea>
+        </div>
+
+        <div class="col-lg-1 p-5"></div>
     </div>
 
     <div class="row">
-        <div class="col-sm-8" style="background-color:violet;"></div>
-        <div class="col-sm-4 p-3" style="background-color:#6200f2;">Total price:</div>
+        <div class="col-sm-8" style="background-color:violet; height: 150px"></div>
+        <div class="col-sm-4 p-3" style="background-color:indigo;">Total price:</div>
     </div>
 
-        <form method="post" action="/the_book">
-            <div class="row">
-                <button type="submit" class="btn btn-secondary p-3">
-                    Create
-                </button>
+    <a href="/the_book">
+        <div class="row mb-3">
+            <div class="btn btn-secondary p-3">
+                Create
             </div>
-        </form>
-    </div>
-    </form>
-</main>
-<footer>
+        </div>
+    </a>
 
-</footer>
+</main>
+
+<script>
+    const tooltips=document.querySelectorAll('.tt')
+    tooltips.forEach(t=>{
+        new bootstrap.Tooltip(t)
+    })
+</script>
+
 </body>
 </html>
