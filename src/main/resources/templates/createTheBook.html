@@ -10,15 +10,10 @@
     <style>
 h5 {
   background-color: violet;
-  padding-top: 0px;
+  padding-top: 40px;
   padding-right: 40px;
-  padding-bottom: 40px;
-  padding-left: 180px;
-  text-align: left;
-}
-h2{
-background-color: violet;
-text-align: center;
+  padding-left: 40px;
+  text-align: center;
 }
 button{
 background-color: violet;
@@ -26,31 +21,30 @@ background-color: violet;
 main{
 background-color: violet;
 }
-
-
-
     </style>
 </head>
 <body>
 <header class="container-fluid p-3 bg-secondary text-white">
-    <h1 th:text="${projectTitle}"></h1>
-
-
-    <div class="row mb-3">
-
-        <a href="/" class="btn btn-dark p-3" type="button">Back to home!</a>
-
-    </div>
-
+    <h1 th:text="${pageInfo.getPageTitle()}"></h1>
 </header>
 <main>
+    <div class="row mb-3">
+        <a href="/" class="btn btn-dark p-3" type="button">Back to home!</a>
+    </div>
+    <div class="row justify-content-left">
+        <div class="col-lg-6 p-0">
+            <h5>Choose basics</h5>
+        </div>
+        <div class="col-lg-6 p-0">
+            <h5>Some additional options will be here in the future..</h5>
+        </div>
+    </div>
 
-    <h3 class="text-primary mb-3" th:text="${pageInfo.getPageTitle()}"></h3>
+<!--BASIC OPTIONS-->
     <form method="get" action="/the_book">
         <div class="row justify-content-left my-5">
-            <div class="col-lg-6 p-5">
-                <h5>Choose basics</h5>
-
+            <div class="col-lg-1 p-3"></div>
+            <div class="col-lg-4 p-3">
                 <!--!!!!!     ŠIS MAINĪGAIS NAV Book KLASĒ, ATTIECĪGI, JA SANĀKS LAIKA, ČAKARĒSIMIES AR ŠIEM PĒC TAM    !!!!!-->
 
                 <!--            <label for="bookName" class="form-label">Name your book</label>-->
@@ -207,8 +201,9 @@ background-color: violet;
                 <!--                TE PRIEKŠ PAGAIDĀM VAR IELIKT TO MANU IEPRIEKŠĒJO IZVĒLNI, BET TAD TEV TĀ ATTIECĪGI JĀIZFORMĒ, VAI PAGAIDĀM PALIEK TUKŠS-->
 
             </div>
-            <div class="col-lg-6 p-5">
-                <h5>Choose optionals</h5>
+            <div class="col-lg-2 p-3"></div>
+<!--ADVANCED OPTIONS-->
+            <div class="col-lg-4 p-3">
                 <!--            <label class="form-label">-->
                 <!--                Vintage look for pages with ageing effect:-->
                 <!--            </label>-->
@@ -288,9 +283,10 @@ background-color: violet;
                 <!--            <textarea class="form-control" name="screwStudComment" style="height: 50px"></textarea>-->
                 <!--        </div>-->
             </div>
+            <div class="col-lg-1 p-3"></div>
         </div>
 
-        <div class="row">
+        <div class="row" style="height: 150px">
             <div class="col-sm-8" style="background-color:violet;"></div>
             <div class="col-sm-4 p-3" style="background-color:indigo;">Total price:</div>
         </div>
@@ -308,8 +304,6 @@ background-color: violet;
     tooltips.forEach(t=>{
         new bootstrap.Tooltip(t)
     })
-
-
 </script>
 
 </body>
