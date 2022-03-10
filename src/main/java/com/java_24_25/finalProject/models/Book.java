@@ -21,10 +21,10 @@ public class Book {
     private String paperType;
 
     private String paperBaseColour;
-    private String vintageLookTeaAging;
-    private String vintageLookCoffeeAging;
-    private String vintageLookSprayAging;
-    // private String coverPrints;
+//    private String vintageLookTeaAging;
+//    private String vintageLookCoffeeAging;
+//    private String vintageLookSprayAging;
+//    // private String coverPrints;
     // private String additionalStyleElements;
     // private String customerWishes;
 

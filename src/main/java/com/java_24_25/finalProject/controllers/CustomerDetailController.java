@@ -25,10 +25,10 @@ public class CustomerDetailController {
                                   @RequestParam(name = "size") String size,
                                   @RequestParam(name = "numberOfPages") int numberOfPages,
                                   @RequestParam(name = "paperType") String paperType,
-                                  @RequestParam(name = "paperBaseColour") String paperBaseColour,
-                                  @RequestParam(name = "vintageLookTeaAging", required = false) String vintageLookTeaAging,
-                                  @RequestParam(name = "vintageLookCoffeeAging", required = false) String vintageLookCoffeeAging,
-                                  @RequestParam(name = "vintageLookCoffeeAging", required = false) String vintageLookSprayAging
+                                  @RequestParam(name = "paperBaseColour") String paperBaseColour
+//                                  @RequestParam(name = "vintageLookTeaAging", required = false) String vintageLookTeaAging,
+//                                  @RequestParam(name = "vintageLookCoffeeAging", required = false) String vintageLookCoffeeAging,
+//                                  @RequestParam(name = "vintageLookCoffeeAging", required = false) String vintageLookSprayAging
 //                                  @RequestParam(name = "coverPrints", required = false) String coverPrints,
 //                                  @RequestParam(name = "additionalStyleElements", required = false) String additionalStyleElements,
 //                                  @RequestParam(name = "customerWishes", required = false) String customerWishes
@@ -50,10 +50,10 @@ public class CustomerDetailController {
                 + "Size of the book: " + size + '\''
                 + "Number of pages: " + numberOfPages + '\''
                 + "Paper type: " + paperType + '\''
-                + "Paper base colour: " + paperBaseColour + '\''
-                + "Vintage look1: " + vintageLookTeaAging + '\''
-                + "Vintage look2: " + vintageLookCoffeeAging + '\''
-                + "Vintage look3: " + vintageLookSprayAging);
+                + "Paper base colour: " + paperBaseColour);
+//                + "Vintage look1: " + vintageLookTeaAging + '\''
+//                + "Vintage look2: " + vintageLookCoffeeAging + '\''
+//                + "Vintage look3: " + vintageLookSprayAging);
 
 
 
@@ -66,9 +66,9 @@ public class CustomerDetailController {
         model.addAttribute("numberOfPages", numberOfPages);
         model.addAttribute("paperType", paperType);
         model.addAttribute("paperBaseColour", paperBaseColour);
-        model.addAttribute("Vintage look1: ", vintageLookTeaAging);
-        model.addAttribute("Vintage look2: ", vintageLookCoffeeAging);
-        model.addAttribute("Vintage look3: ", vintageLookSprayAging);
+//        model.addAttribute("Vintage look1: ", vintageLookTeaAging);
+//        model.addAttribute("Vintage look2: ", vintageLookCoffeeAging);
+//        model.addAttribute("Vintage look3: ", vintageLookSprayAging);
 
         return "yourBook";
     }
