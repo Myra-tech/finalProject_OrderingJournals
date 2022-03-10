@@ -46,23 +46,25 @@ background-color: violet;
 <main>
 
     <h3 class="text-primary mb-3" th:text="${pageInfo.getPageTitle()}"></h3>
-    <form method="get" action="/the_book">
+<!--    <form method="get" action="/the_book">-->
+        <form method="post" action="/create">
         <div class="row justify-content-left my-5">
             <div class="col-lg-6 p-5">
                 <h5>Choose basics</h5>
 
                 <!--!!!!!     ŠIS MAINĪGAIS NAV Book KLASĒ, ATTIECĪGI, JA SANĀKS LAIKA, ČAKARĒSIMIES AR ŠIEM PĒC TAM    !!!!!-->
 
-                <!--            <label for="bookName" class="form-label">Name your book</label>-->
-                <!--            <input type="name" class="form-control" id="bookName" placeholder="e.g. myBook">-->
-                <!--            -->
+<!--                            <label for="bookName" class="form-label">Name your book</label>-->
+<!--                            <input type="name" class="form-control" id="bookName" placeholder="e.g. myBook" required>-->
+
 
                 <label class="form-label">Cover type</label>
                 <div class="mb-4 input-group">
                     <span class="input-group-text">
                         <i class="bi bi-book-half"></i>
                     </span>
-                    <select class="form-select" name="coverType">
+<!--                    <select class="form-select" name="coverType">-->
+                    <select class="form-control" name="coverType">
                         <option value="hardcover">hardcover</option>
                         <option value="journal">journal</option>
                     </select>
@@ -79,7 +81,9 @@ background-color: violet;
                     <span class="input-group-text">
                         <i class="bi bi-book-half"></i>
                     </span>
-                    <select class="form-select" name="leatherType">
+<!--                    ATMAINI ŠO TE ATPAKAĻ, JA VISS DARBOJAS-->
+<!--                    <select class="form-select" name="leatherType">-->
+                        <select class="form-control" name="leatherType">
                         <option value="chrome tanned">chrome tanned</option>
                         <option value="vegetable tanned">vegetable tanned</option>
                     </select>
@@ -209,21 +213,21 @@ background-color: violet;
             </div>
             <div class="col-lg-6 p-5">
                 <h5>Choose optionals</h5>
-                <!--            <label class="form-label">-->
-                <!--                Vintage look for pages with ageing effect:-->
-                <!--            </label>-->
-                <!--            <div class="checkbox-container">-->
-                <!--                <input type="checkbox" id="teaAgeing">-->
-                <!--                <label for="teaAgeing">tea</label>-->
-                <!--            </div>-->
-                <!--            <div class="checkbox-container">-->
-                <!--                <input type="checkbox" id="coffeeAgeing">-->
-                <!--                <label for="coffeeAgeing">coffee</label>-->
-                <!--            </div>-->
-                <!--            <div class="checkbox-container">-->
-                <!--                <input type="checkbox" id="sprayAgeing">-->
-                <!--                <label for="sprayAgeing">spray</label>-->
-                <!--            </div><br>-->
+                            <label class="form-label">
+                                Vintage look for pages with ageing effect:
+                            </label>
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="vintageLookTeaAgeing">
+                                <label for="vintageLookTeaAgeing">tea</label>
+                            </div>
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="vintageLookCoffeeAging">
+                                <label for="vintageLookCoffeeAging">coffee</label>
+                            </div>
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="vintageLookSprayAging">
+                                <label for="vintageLookSprayAging">spray</label>
+                            </div><br>
                 <!--            <label class="form-label">-->
                 <!--                Layer on the cover (only for hardcover book):-->
                 <!--            </label>-->

@@ -32,6 +32,12 @@
 
     <section>
         <div>
+            <span><b>The name of the book:</b></span>
+            <span th:text="${bookName}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
             <span><b>Cover type:</b></span>
             <span th:text="${coverType}"></span>
         </div>
@@ -94,14 +100,20 @@
     </section>
     <section>
         <div>
-            <span><b>Prints:</b></span>
-            <span th:text="${coverPrints}"></span>
+            <span><b>Vintage look1:</b></span>
+            <span th:text="${vintageLookTeaAging}"></span>
         </div>
     </section>
     <section>
         <div>
-            <span><b>Additional style elements:</b></span>
-            <span th:text="${additionalStyleElements}"></span>
+            <span><b>Vintage look2:</b></span>
+            <span th:text="${vintageLookCoffeeAging}"></span>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span><b>Vintage look3:</b></span>
+            <span th:text="${vintageLookSprayAging}"></span>
         </div>
     </section>
     <!--    <section>-->
@@ -139,15 +151,15 @@
     <form method="get" action="/receipt">
         <div>
             <label>Name, surname</label>
-            <input type="text" name="customerName">
+            <input type="text" name="customerName" required>
         </div>
         <div>
             <label>Shipping address:</label>
-            <input type="text" name="customerAddress">
+            <input type="text" name="customerAddress" required>
         </div>
         <div>
             <label>Email:</label>
-            <input type="email" name="customerEmail">
+            <input type="email" name="customerEmail" required>
         </div>
         <br>
         <div>
