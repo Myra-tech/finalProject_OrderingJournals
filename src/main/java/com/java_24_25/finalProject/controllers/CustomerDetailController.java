@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class CustomerDetailController {
 
+    // private List<Book> bookDetails = new ArrayList<>();
     @Autowired
     PageDataService pageDataService;
 
@@ -50,6 +51,8 @@ public class CustomerDetailController {
                 + "Cover prints: " + coverPrints + '\''
                 + "Additional style elements: " + additionalStyleElements + '\''
                 + "Customer wishes: " + customerWishes);
+
+
 
         Book book = new Book(coverType, leatherType, colourOfLeather, size, numberOfPages, paperType, paperBaseColour, coverPrints, additionalStyleElements);
         model.addAttribute("coverType", coverType);
