@@ -8,17 +8,13 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
+
 h5 {
   background-color: violet;
-  padding-top: 0px;
+  padding-top: 40px;
   padding-right: 40px;
-  padding-bottom: 40px;
-  padding-left: 180px;
-  text-align: left;
-}
-h2{
-background-color: violet;
-text-align: center;
+  padding-left: 40px;
+  text-align: center;
 }
 button{
 background-color: violet;
@@ -27,35 +23,30 @@ main{
 background-color: violet;
 }
 
-
-
     </style>
 </head>
 <body>
 <header class="container-fluid p-3 bg-secondary text-white">
-    <h1 th:text="${projectTitle}"></h1>
-
-
-    <div class="row mb-3">
-
-        <a href="/" class="btn btn-dark p-3" type="button">Back to home!</a>
-
-    </div>
-
+    <h1 th:text="${pageInfo.getPageTitle()}"></h1>
 </header>
 <main>
+    <div class="row mb-3">
+        <a href="/" class="btn btn-dark p-3" type="button">Back to home!</a>
+    </div>
+    <div class="row justify-content-left">
+        <div class="col-lg-6 p-0">
+            <h5>Choose basics</h5>
+        </div>
+        <div class="col-lg-6 p-0">
+            <h5>.</h5>
+        </div>
+    </div>
 
-    <h3 class="text-primary mb-3" th:text="${pageInfo.getPageTitle()}"></h3>
+    <!--BASIC OPTIONS-->
     <form method="get" action="/the_book">
         <div class="row justify-content-left my-5">
-            <div class="col-lg-6 p-5">
-                <h5>Choose basics</h5>
-
-                <!--!!!!!     ŠIS MAINĪGAIS NAV Book KLASĒ, ATTIECĪGI, JA SANĀKS LAIKA, ČAKARĒSIMIES AR ŠIEM PĒC TAM    !!!!!-->
-
-                <!--            <label for="bookName" class="form-label">Name your book</label>-->
-                <!--            <input type="name" class="form-control" id="bookName" placeholder="e.g. myBook">-->
-                <!--            -->
+            <div class="col-lg-1 p-3"></div>
+            <div class="col-lg-4 p-3">
 
                 <label class="form-label">Cover type</label>
                 <div class="mb-4 input-group">
@@ -68,7 +59,8 @@ background-color: violet;
                     </select>
                     <!--Tooltip-->
                     <span class="input-group-text">
-                        <span class="tt" data-bs-placement="right" title="journal type is soft cover type cover">
+                        <span class="tt" data-bs-placement="right"
+                              title="Journal type is soft cover made with only leather and no wood cardboard">
                             <i class="bi bi-question-circle text-muted"></i>
                         </span>
                     </span>
@@ -86,8 +78,12 @@ background-color: violet;
                     <!--Tooltip-->
                     <span class="input-group-text">
                         <span class="tt" data-bs-placement="right"
-                              title="chrome tanned: factory tanned leather for simple designs, vegetable tanned:
-                              high quality leather with possibility for multi-color,color with shades and hand engravings">
+                              title="...
+                              CHROME TANNED LEATHER: factory tanned leather for simple designs,
+                              .
+                              VEGETABLE TANNED LEATHER: high quality leather with possibility for multi-color,
+                              .
+                              color with shades and hand engravings">
                             <i class="bi bi-question-circle text-muted"></i>
                         </span>
                     </span>
@@ -116,14 +112,6 @@ background-color: violet;
                     </span>
                 </div>
 
-                <!--        SEKOJOŠO KODU PAGAIDĀM NEVAR IEVIETOT, JO PROGRAMMĀ ŠIS MAINĪGAIS NEBIJA PAREDZĒTS -->
-                <!--        JA SANĀKS LAIKS, TAD VAR ČAKARĒTIES TO SAVIENOT, BET PAGAIDĀM BŪS JĀIZTIEK BEZ-->
-
-                <!--        <label class="form-label">-->
-                <!--            Please comment below: if you choose multi-colored or need any specific color!-->
-                <!--        </label>-->
-                <!--        <textarea class="form-control" name="leatherColorComment" style="height: 100px"></textarea>-->
-
                 <label class="form-label">Size</label>
                 <div class="mb-4 input-group">
                     <span class="input-group-text">
@@ -137,7 +125,7 @@ background-color: violet;
                     <!--Tooltip-->
                     <span class="input-group-text">
                         <span class="tt" data-bs-placement="right"
-                              title="A5 (14,8x21 cm2), B5 (17,6x25 cm2), A4 (21x29,7 cm2)">
+                              title="A5 = 14,8cm x 21cm, B5 = 17,6cm x 25cm, A4 = 21cm x 29,7cm">
                             <i class="bi bi-question-circle text-muted"></i>
                         </span>
                     </span>
@@ -159,7 +147,7 @@ background-color: violet;
                     <!--Tooltip-->
                     <span class="input-group-text">
                         <span class="tt" data-bs-placement="right"
-                              title="suggestion: at least 160 pages for sketch and not more that 200 for watercolor paper types">
+                              title="SUGGESTION: at least 160 pages for sketch and not more that 200 for watercolor paper types">
                             <i class="bi bi-question-circle text-muted"></i>
                         </span>
                     </span>
@@ -178,7 +166,7 @@ background-color: violet;
                     <!--Tooltip-->
                     <span class="input-group-text">
                         <span class="tt" data-bs-placement="right"
-                              title="120g/m (sketch), 160g/m (drawing)">
+                              title="Sketch paper = 120 g/m, drawing paper = 160g/m">
                             <i class="bi bi-question-circle text-muted"></i>
                         </span>
                     </span>
@@ -197,18 +185,16 @@ background-color: violet;
                     <!--Tooltip-->
                     <span class="input-group-text">
                         <span class="tt" data-bs-placement="right"
-                              title="only 'white' option for watercolor paper type">
+                              title="For watercolor paper type - only option is 'white' color">
                             <i class="bi bi-question-circle text-muted"></i>
                         </span>
                     </span>
                 </div>
 
-                <!--   !!!! Attiecīgi tā pati problēma te.  -->
-                <!--                TE PRIEKŠ PAGAIDĀM VAR IELIKT TO MANU IEPRIEKŠĒJO IZVĒLNI, BET TAD TEV TĀ ATTIECĪGI JĀIZFORMĒ, VAI PAGAIDĀM PALIEK TUKŠS-->
-
             </div>
-            <div class="col-lg-6 p-5">
-                <h5>Choose optionals</h5>
+            <div class="col-lg-2 p-3"></div>
+            <!--ADVANCED OPTIONS-->
+            <div class="col-lg-4 p-3">
                 <!--            <label class="form-label">-->
                 <!--                Vintage look for pages with ageing effect:-->
                 <!--            </label>-->
@@ -288,9 +274,10 @@ background-color: violet;
                 <!--            <textarea class="form-control" name="screwStudComment" style="height: 50px"></textarea>-->
                 <!--        </div>-->
             </div>
+            <div class="col-lg-1 p-3"></div>
         </div>
 
-        <div class="row">
+        <div class="row" style="height: 150px">
             <div class="col-sm-8" style="background-color:violet;"></div>
             <div class="col-sm-4 p-3" style="background-color:indigo;">Total price:</div>
         </div>
@@ -309,8 +296,6 @@ background-color: violet;
         new bootstrap.Tooltip(t)
     })
 
-
 </script>
-
 </body>
 </html>

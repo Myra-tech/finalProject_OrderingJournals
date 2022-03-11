@@ -2,7 +2,9 @@ package com.java_24_25.finalProject.models;
 
 import lombok.*;
 
-import java.util.UUID;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -10,10 +12,13 @@ import java.util.UUID;
 @Setter
 @ToString
 public class Orders {
-    private UUID orderId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long orderId;
     private int orderNumber; // after testing phase take it out and change it all to orderId, and activate it in the constructor
     private double totalPriceOfOrder;
     private boolean invoicePaid;
+    private Book book;
 
     private Customer customer;
     private OrderStatus orderStatus;
