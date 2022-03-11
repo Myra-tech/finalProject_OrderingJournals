@@ -13,11 +13,9 @@ public class Book {
     private String coverType;
     private String leatherType;
     private String colourOfLeather;
-
     private String size;
     private int numberOfPages;
     private String paperType;
-
     private String paperBaseColour;
     private String vintageLook;
     private String coverPrints;
@@ -100,5 +98,4 @@ public class Book {
         this.additionalStyleElements = additionalStyleElements;
         this.customerWishes = customerWishes;
     }
-
 }
