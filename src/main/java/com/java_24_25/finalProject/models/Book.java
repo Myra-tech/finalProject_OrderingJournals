@@ -1,12 +1,11 @@
 package com.java_24_25.finalProject.models;
 
 import lombok.*;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
+import java.sql.Date;
 
 @Getter
 @Setter
@@ -18,7 +17,6 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-//    private String bookName;
     private String coverType;
     private String leatherType;
     private String colourOfLeather;
@@ -28,16 +26,9 @@ public class Book {
     private String paperType;
 
     private String paperBaseColour;
-//    private String vintageLookTeaAging;
-//    private String vintageLookCoffeeAging;
-//    private String vintageLookSprayAging;
-//    // private String coverPrints;
-    // private String additionalStyleElements;
-    // private String customerWishes;
-
     private Date orderDate;
 
-    public Book(Long id, String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour) {
+    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour) {
         this.coverType = coverType;
         this.leatherType = leatherType;
         this.colourOfLeather = colourOfLeather;
@@ -46,5 +37,4 @@ public class Book {
         this.paperType = paperType;
         this.paperBaseColour = paperBaseColour;
     }
-
 }
