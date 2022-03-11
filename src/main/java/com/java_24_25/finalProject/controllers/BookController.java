@@ -1,6 +1,7 @@
 package com.java_24_25.finalProject.controllers;
 
 import com.java_24_25.finalProject.models.Book;
+import com.java_24_25.finalProject.repository.BookRepository;
 import com.java_24_25.finalProject.services.PageDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,9 @@ public class BookController {
 
     @Autowired
     PageDataService pageDataService;
+
+    @Autowired
+    BookRepository bookRepository;
 
     @GetMapping("/create")
     public String showCreateTheBookPage(Model model) {
@@ -27,6 +31,7 @@ public class BookController {
     public String handleClientChoices(Book book) {
         System.out.println("this handles client choices");
         System.out.println(book);
+        bookRepository.save(book);
 //        return "redirect:createTheBook";
 //        return "createTheBook";
         return "redirect:create";   /// after 'redirect' you give the link not the html file
