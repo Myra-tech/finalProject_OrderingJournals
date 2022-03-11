@@ -2,6 +2,9 @@ package com.java_24_25.finalProject.models;
 
 import lombok.*;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Getter
@@ -10,6 +13,8 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 //    private String bookName;
     private String coverType;
@@ -30,7 +35,7 @@ public class Book {
 
     private Date orderDate;
 
-    public Book(String bookName, String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour) {
+    public Book(long id, String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour) {
         this.coverType = coverType;
         this.leatherType = leatherType;
         this.colourOfLeather = colourOfLeather;
