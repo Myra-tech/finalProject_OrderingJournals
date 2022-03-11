@@ -25,13 +25,10 @@ background-color: violet;
 footer{
 background-color: secondary;
 }
+
     </style>
 </head>
 <body>
-<!--THE FOLLOWING NAVIGATION CODE IS FOUND AT THE BOTTOM OF THIS PAGE; I AM UNDECIDED WHERE SHOULD IT BE.-->
-<!--<nav>-->
-<!--    <a href="/">Home</a>-->
-<!--</nav>-->
 
 <header class="container-fluid p-3 bg-secondary text-white">
     <h1>Happy book</h1>
@@ -42,49 +39,34 @@ background-color: secondary;
     </div>
     <h5>Thanks for placing the order.</h5>
     <div class="row justify-content-left">
-<!-- border left -->
+
+        <!-- border left -->
         <div class="col-lg-4 p-0"></div>
-<!-- details -->
+        <!-- details -->
         <div class="col-lg-3 p-0">
             <span>Your order number is</span><br>
-                <!--    <span th:text="${yourOrder.getOrderNumber()}">.</span><br>-->
-                <!--    THIS LINE MADE THE CODE BREAK-->
-                <!--    It worked before @RequestParam was introduced that sends some other parameters to this page-->
+
             <span>The invoice: EUR</span><br>
-                <!--      <span th:text="${yourOrder.getTotalPriceOfOrder()}"></span><br>-->
-                <!--      THIS LINE BREAKS THE CODE-->
-                <!--    It worked before @RequestParam was introduced that sends some other parameters to this page-->
-                <!--        XXXX is a placeholder-->
-            <span>Payment received:</span><br>
-                <!--      <span th:text="${yourOrder.isInvoicePaid()}"></span><br>-->
-                <!--      THIS LINE BREAKS THE CODE-->
-                <!--    It worked before @RequestParam was introduced that sends some other parameters to this page-->
-                <!--        XXXX is a placeholder-->
-            <span>This order is for</span><br>
-                <!--        THIS WAS THE PREVIOUS VERSION AND IT WORKED-->
-                <!--    <span th:text="${yourOrder.getCustomer().getCustomerName()}"></span>-->
-            <span>Shipping address:</span><br>
+
             <span>Order status:</span><br>
+            <br>
+            <span>This order is for</span><br>
+
+            <span>Shipping address:</span><br>
+            <br>
             <span>My book:</span>
-                <!--                <ul>-->
-                <!--                    <li th:each="bookDetail: ${myBookDetails}">-->
-                <!--                        <span th:text="${bookDetail.getDetail()}"></span>-->
-                <!--                        <span th:text="${bookDetail.getChosenFeature()}"> </span>-->
-                <!--                    </li>-->
-                <!--                </ul>-->
-                <!--                THE SAME: THE LOOP DOESN'T WORK AND BREAKS THE CODE FOLLOWING @RequestParam-->
         </div>
-<!-- detail values -->
+        <!-- detail values -->
         <div class="col-lg-3 p-0">
-            <span>XXXX</span><br>
-            <span>XXXX</span><br>
-            <span>XXXX</span><br>
+            <span>y13D</span><br>
+            <span>XXXX from calculator XXXX </span><br>
+            <span>PENDING</span><br>
             <span th:text="${customerName}"></span><br>
             <span th:text="${customerAddress}"></span><br>
-            <span>XXXX</span><br>
+            <br>
             <span>XXXX THE LOOP XXXX</span>
         </div>
-<!-- border right -->
+        <!-- border right -->
         <div class="col-lg-2 p-0"></div>
     </div>
     <div class="row" style="height: 150px"></div>

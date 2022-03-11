@@ -45,89 +45,41 @@ background-color: violet;
             <h5>Please enter your personal details.</h5>
         </div>
     </div>
-<!--    MAKE BOOK ENTRIES INTO A LOOP-->
-<!--    <section>-->
-<!--            <div>-->
-<!--              <span>My book:</span>-->
-<!--              <ul>-->
-<!--                <li th:each="bookDetail: ${myBookDetails}">-->
-<!--                  <span th:text="${bookDetail.getDetail()}">: </span>-->
-<!--                  <span th:text="${bookDetail.getChosenFeature()}"> </span>-->
-<!--                </li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </section>-->
+
     <div class="row my-5">
 <!-- border left -->
         <div class="col-lg-1 p-0"></div>
-<!-- details -->
+        <!-- details -->
         <div class="col-lg-3 p-0">
-                <div>
-                    <span><b>Cover type:</b></span>
-                </div>
-                <div>
-                    <span><b>Leather type:</b></span>
-                </div>
-            <!--    <section>-->
-            <!--        <div>-->
-            <!--            <span><b>Leather type:</b></span>-->
-            <!--            <span th:text="${theChosenLeatherType}"></span>-->
-            <!--        </div>-->
-            <!--    </section>-->
-                <div>
-                    <span><b>Colour of the leather:</b></span>
-                </div>
-            <!--    <section>-->
-            <!--        <div>-->
-            <!--            <span><b>Colour of the leather:</b></span>-->
-            <!--            <span th:text="${theChosenColourOfLeather}"></span>-->
-            <!--        </div>-->
-            <!--    </section>-->
-                <div>
-                    <span><b>Size:</b></span>
-                </div>
-                <div>
-                    <span><b>Number of pages:</b></span>
-                </div>
-                <div>
-                    <span><b>Paper type:</b></span>
-                </div>
-                <div>
-                    <span><b>Paper base colour:</b></span>
-                </div>
-                <div>
-                    <span><b>Prints:</b></span>
-                </div>
-                <div>
-                    <span><b>Additional style elements:</b></span>
-                </div>
-            <!--    <section>-->
-            <!--        <div>-->
-            <!--            <h2>Your personalised book.</h2>-->
-            <!--            <ul>-->
-            <!--                <li th:each="myBookDetail: ${myBookDetails}">-->
-            <!--                    <span th:text="${myBookDetail.getDetail()}"></span>-->
-            <!--                    <span th:text="${myBookDetail.getChosenFeature()}"></span>-->
-            <!--                </li>-->
-            <!--            </ul>-->
-            <!--        </div>-->
-            <!--    </section>-->
+            <div>
+                <span><b>Cover type:</b></span>
+            </div>
+            <div>
+                <span><b>Leather type:</b></span>
+            </div>
 
-            <!--    <br>-->
-            <!--    <section>-->
-            <!--        <div>-->
-            <!--            <span>-&#45;&#45; Order</span>-->
-            <!--            <span>number</span>-->
-            <!--            <span th:text="${yourOrder.getOrderNumber()}"></span>-->
-            <!--            <span>for</span>-->
-            <!--            <span th:text="${yourOrder.getCustomer().getCustomerName()}"></span>-->
-            <!--            <span>has been</span>-->
-            <!--            <span th:text="${#strings.toLowerCase(yourOrder.getOrderStatus())}"></span>-->
-            <!--            <span>-&#45;&#45;</span>-->
-            <!--        </div>-->
-            <!--    </section>-->
+            <div>
+                <span><b>Colour of the leather:</b></span>
+            </div>
 
-            <!--    </section>-->
+            <div>
+                <span><b>Size:</b></span>
+            </div>
+            <div>
+                <span><b>Number of pages:</b></span>
+            </div>
+            <div>
+                <span><b>Paper type:</b></span>
+            </div>
+            <div>
+                <span><b>Paper base colour:</b></span>
+            </div>
+            <div>
+                <span><b>Prints:</b></span>
+            </div>
+            <div>
+                <span><b>Additional style elements:</b></span>
+            </div>
 
         </div>
 <!-- detail values -->
@@ -160,18 +112,18 @@ background-color: violet;
                 <span th:text="${additionalStyleElements}"></span>
             </div>
         </div>
-<!-- border middle -->
+        <!-- border middle -->
         <div class="col-lg-1 p-0"></div>
-<!-- right column -->
+        <!-- right column -->
         <div class="col-lg-2 p-0">
             <form method="get" action="/receipt">
-                    <div><label class="form-label">Name, surname</label></div><br>
-                    <div> <label class="form-label">Shipping address:</label></div><br>
-                    <div><label class="form-label"> Email:</label></div>
+                <div><label class="form-label">Name, surname</label></div><br>
+                <div> <label class="form-label">Shipping address:</label></div><br>
+                <div><label class="form-label"> Email:</label></div>
         </div>
         <div class="col-lg-2 p-0">
             <div class="mb-4 input-group">
-                 <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
                 <input type="text" name="customerName">
             </div>
             <div class="mb-4 input-group">
@@ -183,7 +135,7 @@ background-color: violet;
                 <input type="email" name="customerEmail">
             </div>
         </div>
-<!-- border right -->
+        <!-- border right -->
         <div class="col-lg-1 p-0"></div>
     </div>
     <div class="row mb-3">
