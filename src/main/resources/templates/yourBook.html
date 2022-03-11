@@ -26,7 +26,8 @@ background-color: violet;
 main{
 background-color: violet;
 }
-</style>
+
+    </style>
 </head>
 <body>
 <header class="container-fluid p-3 bg-secondary text-white">
@@ -46,18 +47,7 @@ background-color: violet;
             <h5>Please enter your personal details.</h5>
         </div>
     </div>
-    <!--    MAKE BOOK ENTRIES INTO A LOOP-->
-    <!--    <section>-->
-    <!--            <div>-->
-    <!--              <span>My book:</span>-->
-    <!--              <ul>-->
-    <!--                <li th:each="bookDetail: ${myBookDetails}">-->
-    <!--                  <span th:text="${bookDetail.getDetail()}">: </span>-->
-    <!--                  <span th:text="${bookDetail.getChosenFeature()}"> </span>-->
-    <!--                </li>-->
-    <!--              </ul>-->
-    <!--            </div>-->
-    <!--          </section>-->
+
     <div class="row my-5">
         <!-- border left -->
         <div class="col-lg-1 p-0"></div>
@@ -69,21 +59,11 @@ background-color: violet;
             <div>
                 <span><b>Leather type:</b></span>
             </div>
-            <!--    <section>-->
-            <!--        <div>-->
-            <!--            <span><b>Leather type:</b></span>-->
-            <!--            <span th:text="${theChosenLeatherType}"></span>-->
-            <!--        </div>-->
-            <!--    </section>-->
+
             <div>
                 <span><b>Colour of the leather:</b></span>
             </div>
-            <!--    <section>-->
-            <!--        <div>-->
-            <!--            <span><b>Colour of the leather:</b></span>-->
-            <!--            <span th:text="${theChosenColourOfLeather}"></span>-->
-            <!--        </div>-->
-            <!--    </section>-->
+
             <div>
                 <span><b>Size:</b></span>
             </div>
@@ -102,33 +82,6 @@ background-color: violet;
             <div>
                 <span><b>Additional style elements:</b></span>
             </div>
-            <!--    <section>-->
-            <!--        <div>-->
-            <!--            <h2>Your personalised book.</h2>-->
-            <!--            <ul>-->
-            <!--                <li th:each="myBookDetail: ${myBookDetails}">-->
-            <!--                    <span th:text="${myBookDetail.getDetail()}"></span>-->
-            <!--                    <span th:text="${myBookDetail.getChosenFeature()}"></span>-->
-            <!--                </li>-->
-            <!--            </ul>-->
-            <!--        </div>-->
-            <!--    </section>-->
-
-            <!--    <br>-->
-            <!--    <section>-->
-            <!--        <div>-->
-            <!--            <span>-&#45;&#45; Order</span>-->
-            <!--            <span>number</span>-->
-            <!--            <span th:text="${yourOrder.getOrderNumber()}"></span>-->
-            <!--            <span>for</span>-->
-            <!--            <span th:text="${yourOrder.getCustomer().getCustomerName()}"></span>-->
-            <!--            <span>has been</span>-->
-            <!--            <span th:text="${#strings.toLowerCase(yourOrder.getOrderStatus())}"></span>-->
-            <!--            <span>-&#45;&#45;</span>-->
-            <!--        </div>-->
-            <!--    </section>-->
-
-            <!--    </section>-->
 
         </div>
         <!-- detail values -->
@@ -166,8 +119,10 @@ background-color: violet;
         <!-- right column -->
         <div class="col-lg-2 p-0">
             <form method="get" action="/receipt">
-                <div><label class="form-label">Name, surname</label></div><br>
-                <div> <label class="form-label">Shipping address:</label></div><br>
+                <div><label class="form-label">Name, surname</label></div>
+                <br>
+                <div><label class="form-label">Shipping address:</label></div>
+                <br>
                 <div><label class="form-label"> Email:</label></div>
         </div>
         <div class="col-lg-2 p-0">
@@ -194,227 +149,3 @@ background-color: violet;
 </main>
 </body>
 </html>
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
-
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Kia's books | Your book</title>-->
-<!--</head>-->
-
-<!--<body>-->
-<!--<nav>-->
-<!--    <a href="/">Home</a>-->
-<!--</nav>-->
-<!--<header>-->
-<!--    <h2 th:text="${projectTitle}"></h2>-->
-<!--    <h3 th:text="${pageInfo.getPageTitle()}"></h3>-->
-<!--</header>-->
-
-<!--<main>-->
-
-<!--&lt;!&ndash;    MAKE BOOK ENTRIES INTO A LOOP&ndash;&gt;-->
-<!--&lt;!&ndash;    <section>&ndash;&gt;-->
-<!--&lt;!&ndash;            <div>&ndash;&gt;-->
-<!--&lt;!&ndash;              <span>My book:</span>&ndash;&gt;-->
-<!--&lt;!&ndash;              <ul>&ndash;&gt;-->
-<!--&lt;!&ndash;                <li th:each="bookDetail: ${myBookDetails}">&ndash;&gt;-->
-<!--&lt;!&ndash;                  <span th:text="${bookDetail.getDetail()}">: </span>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <span th:text="${bookDetail.getChosenFeature()}"> </span>&ndash;&gt;-->
-<!--&lt;!&ndash;                </li>&ndash;&gt;-->
-<!--&lt;!&ndash;              </ul>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;          </section>&ndash;&gt;-->
-
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>The name of the book:</b></span>-->
-<!--            <span th:text="${bookName}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Cover type:</b></span>-->
-<!--            <span th:text="${coverType}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    &lt;!&ndash;    <section>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span><b>Cover type:</b></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span th:text="${theChosenCoverType}"></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            Neskatoties, ko es ievadu /create lapā, Thymeleaf ņem to "${coverType}" no model.addAttribute("coverType", "hardcover");&ndash;&gt;-->
-<!--    &lt;!&ndash;            tad kad Tu dabūsi @RequestParam working, the coverType value should come from JAVA&ndash;&gt;-->
-<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Leather type:</b></span>-->
-<!--            <span th:text="${leatherType}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    &lt;!&ndash;    <section>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span><b>Leather type:</b></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span th:text="${theChosenLeatherType}"></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Colour of the leather:</b></span>-->
-<!--            <span th:text="${colourOfLeather}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    &lt;!&ndash;    <section>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span><b>Colour of the leather:</b></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span th:text="${theChosenColourOfLeather}"></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Size:</b></span>-->
-<!--            <span th:text="${size}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Number of pages:</b></span>-->
-<!--            <span th:text="${numberOfPages}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Paper type:</b></span>-->
-<!--            <span th:text="${paperType}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Paper base colour:</b></span>-->
-<!--            <span th:text="${paperBaseColour}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Vintage look1:</b></span>-->
-<!--            <span th:text="${vintageLookTeaAging}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Vintage look2:</b></span>-->
-<!--            <span th:text="${vintageLookCoffeeAging}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span><b>Vintage look3:</b></span>-->
-<!--            <span th:text="${vintageLookSprayAging}"></span>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    &lt;!&ndash;    <section>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <h2>Your personalised book.</h2>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <ul>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <li th:each="myBookDetail: ${myBookDetails}">&ndash;&gt;-->
-<!--    &lt;!&ndash;                    <span th:text="${myBookDetail.getDetail()}"></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;                    <span th:text="${myBookDetail.getChosenFeature()}"></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;                </li>&ndash;&gt;-->
-<!--    &lt;!&ndash;            </ul>&ndash;&gt;-->
-<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
-
-
-<!--    &lt;!&ndash;    <br>&ndash;&gt;-->
-<!--    &lt;!&ndash;    <section>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span>-&#45;&#45; Order</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span>number</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span th:text="${yourOrder.getOrderNumber()}"></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span>for</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span th:text="${yourOrder.getCustomer().getCustomerName()}"></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span>has been</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span th:text="${#strings.toLowerCase(yourOrder.getOrderStatus())}"></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span>-&#45;&#45;</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
-
-<!--    &lt;!&ndash;    </section>&ndash;&gt;-->
-
-<!--    <h2>Please enter your personal details.</h2>-->
-
-
-<!--    <form method="get" action="/receipt">-->
-<!--        <div>-->
-<!--            <label>Name, surname</label>-->
-<!--            <input type="text" name="customerName" required>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label>Shipping address:</label>-->
-<!--            <input type="text" name="customerAddress" required>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label>Email:</label>-->
-<!--            <input type="email" name="customerEmail" required>-->
-<!--        </div>-->
-<!--        <br>-->
-<!--        <div>-->
-
-<!--            <button type="submit">Submit</button>-->
-<!--        </div>-->
-<!--    </form>-->
-<!--    <br>-->
-<!--&lt;!&ndash;    <h3>Thanks for placing the order.</h3>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span>Your order number is</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span th:text="${yourOrder.getOrderNumber()}">.</span><br>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span>Click</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <nav>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <a href="/receipt">here</a>&ndash;&gt;-->
-<!--    &lt;!&ndash;            </nav>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <span>to see the details of your order.</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
-
-<!--    &lt;!&ndash;        <h2>Please enter your personal details.</h2>&ndash;&gt;-->
-
-
-<!--    &lt;!&ndash;        <form method="get">     &lt;!&ndash;&#45;&#45;VARBŪT NĒ. TIE KAS ZIN PASKATĪTIES ADRESES RINDĀ ZI KĀ TO IZDABŪT O INSPECT.&ndash;&gt;-->
-<!--    &lt;!&ndash;                            Tu lietosi POST metodi te, lai klienta detaļas neparādītos web adreses ailē.&#45;&#45;&ndash;&gt;&ndash;&gt;-->
-<!--    &lt;!&ndash;            <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <label>Name, surname</label>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <input type="text" name="customerName">&ndash;&gt;-->
-<!--    &lt;!&ndash;            </div>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <label>Shipping address:</label>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <input type="text" name="customerAddress">&ndash;&gt;-->
-<!--    &lt;!&ndash;            </div>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <label>Email:</label>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <input type="email" name="customerEmail">&ndash;&gt;-->
-<!--    &lt;!&ndash;            </div>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <br>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;                &lt;!&ndash;&#45;&#45;button type="view">Review the order</button&#45;&#45;&ndash;&gt;&ndash;&gt;-->
-<!--    &lt;!&ndash;                <button type="submit">Submit</button>&ndash;&gt;-->
-<!--    &lt;!&ndash;            </div>&ndash;&gt;-->
-
-<!--    &lt;!&ndash;            <br>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <h3>Thanks for placing the order.</h3>&ndash;&gt;-->
-<!--    &lt;!&ndash;            <div>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <span>Your order number is</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <span th:text="${yourOrder.getOrderNumber()}">.</span><br>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <span>Click</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <nav>&ndash;&gt;-->
-<!--    &lt;!&ndash;                    <a href="/receipt">here</a> &lt;!&ndash;-&#45;&#45;nesapratu, kā šo visu dabūt vienā rindā&#45;&#45;&ndash;&gt;&ndash;&gt;-->
-<!--    &lt;!&ndash;                </nav>&ndash;&gt;-->
-<!--    &lt;!&ndash;                <span>to see the details of your order.</span>&ndash;&gt;-->
-<!--    &lt;!&ndash;            </div>&ndash;&gt;-->
-
-<!--    &lt;!&ndash;        </form>&ndash;&gt;-->
-<!--</main>-->
-<!--<footer>-->
-
-<!--</footer>-->
-<!--</body>-->
-<!--</html>-->

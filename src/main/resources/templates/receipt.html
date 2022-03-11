@@ -25,13 +25,10 @@ background-color: violet;
 footer{
 background-color: secondary;
 }
+
     </style>
 </head>
 <body>
-<!--THE FOLLOWING NAVIGATION CODE IS FOUND AT THE BOTTOM OF THIS PAGE; I AM UNDECIDED WHERE SHOULD IT BE.-->
-<!--<nav>-->
-<!--    <a href="/">Home</a>-->
-<!--</nav>-->
 
 <header class="container-fluid p-3 bg-secondary text-white">
     <h1>Happy book</h1>
@@ -47,26 +44,15 @@ background-color: secondary;
         <!-- details -->
         <div class="col-lg-3 p-0">
             <span>Your order number is</span><br>
-            <!--    <span th:text="${yourOrder.getOrderNumber()}">.</span><br>-->
-            <!--    THIS LINE MADE THE CODE BREAK-->
-            <!--    It worked before @RequestParam was introduced that sends some other parameters to this page-->
+
             <span>The invoice: EUR</span><br>
-            <!--      <span th:text="${yourOrder.getTotalPriceOfOrder()}"></span><br>-->
-            <!--      THIS LINE BREAKS THE CODE-->
-            <!--    It worked before @RequestParam was introduced that sends some other parameters to this page-->
-            <!--        XXXX is a placeholder-->
-<!--            <span>Payment received:</span><br>-->
-            <!--      <span th:text="${yourOrder.isInvoicePaid()}"></span><br>-->
-            <!--      THIS LINE BREAKS THE CODE-->
-            <!--    It worked before @RequestParam was introduced that sends some other parameters to this page-->
-            <!--        XXXX is a placeholder-->
+
             <span>Order status:</span><br>
             <br>
             <span>This order is for</span><br>
-            <!--        THIS WAS THE PREVIOUS VERSION AND IT WORKED-->
-            <!--    <span th:text="${yourOrder.getCustomer().getCustomerName()}"></span>-->
+
             <span>Shipping address:</span><br>
-<br>
+            <br>
             <span>My book:</span>
             <!--                <ul>-->
             <!--                    <li th:each="bookDetail: ${myBookDetails}">-->
@@ -81,10 +67,10 @@ background-color: secondary;
             <span>y13D</span><br>
             <span>XXXX from calculator XXXX </span><br>
             <span>PENDING</span><br>
-<!--            <span>XXXX</span><br>--> <br>
+            <!--            <span>XXXX</span><br>--> <br>
             <span th:text="${customerName}"></span><br>
             <span th:text="${customerAddress}"></span><br>
-<br>
+            <br>
             <span>XXXX THE LOOP XXXX</span>
         </div>
         <!-- border right -->
@@ -97,173 +83,3 @@ background-color: secondary;
 </footer>
 </body>
 </html>
-
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
-
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Receipt</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--&lt;!&ndash;THE FOLLOWING NAVIGATION CODE IS FOUND AT THE BOTTOM OF THIS PAGE; I AM UNDECIDED WHERE SHOULD IT BE.&ndash;&gt;-->
-<!--&lt;!&ndash;<nav>&ndash;&gt;-->
-<!--&lt;!&ndash;    <a href="/">Home</a>&ndash;&gt;-->
-<!--&lt;!&ndash;</nav>&ndash;&gt;-->
-
-<!--<header>-->
-<!--    <h2>Kia's bookshop.</h2>-->
-<!--</header>-->
-
-<!--<main>-->
-<!--    <h3>Thanks for placing the order.</h3>-->
-
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span>Your order number is</span>-->
-<!--            <span>XXXX</span>-->
-<!--            &lt;!&ndash;    <span th:text="${yourOrder.getOrderNumber()}">.</span><br>&ndash;&gt;-->
-<!--            &lt;!&ndash;    THIS LINE MADE THE CODE BREAK&ndash;&gt;-->
-<!--            &lt;!&ndash;    It worked before @RequestParam was introduced that sends some other parameters to this page&ndash;&gt;-->
-<!--        </div>-->
-<!--        <br>-->
-
-<!--        <div>-->
-<!--            <span>The invoice: EUR</span>-->
-<!--            <span>XXXX</span><br>-->
-<!--            &lt;!&ndash;      <span th:text="${yourOrder.getTotalPriceOfOrder()}"></span><br>&ndash;&gt;-->
-<!--            &lt;!&ndash;      THIS LINE BREAKS THE CODE&ndash;&gt;-->
-<!--            &lt;!&ndash;    It worked before @RequestParam was introduced that sends some other parameters to this page&ndash;&gt;-->
-<!--            &lt;!&ndash;        XXXX is a placeholder&ndash;&gt;-->
-
-<!--            <span>Payment received:</span>-->
-<!--            <span>XXXX</span>-->
-<!--            &lt;!&ndash;      <span th:text="${yourOrder.isInvoicePaid()}"></span><br>&ndash;&gt;-->
-<!--            &lt;!&ndash;      THIS LINE BREAKS THE CODE&ndash;&gt;-->
-<!--            &lt;!&ndash;    It worked before @RequestParam was introduced that sends some other parameters to this page&ndash;&gt;-->
-<!--            &lt;!&ndash;        XXXX is a placeholder&ndash;&gt;-->
-<!--            <br>-->
-<!--        </div>-->
-
-<!--        <div>-->
-<!--            <span>This order is for</span>-->
-<!--            &lt;!&ndash;        THIS WAS THE PREVIOUS VERSION AND IT WORKED&ndash;&gt;-->
-<!--            &lt;!&ndash;    <span th:text="${yourOrder.getCustomer().getCustomerName()}"></span>&ndash;&gt;-->
-<!--            <span th:text="${customerName}"></span>-->
-<!--        </div>-->
-
-<!--        <div>-->
-<!--            <span>Shipping address:</span>-->
-<!--            <span th:text="${customerAddress}"></span><br>-->
-<!--            <br>-->
-<!--        </div>-->
-<!--    </section>-->
-
-<!--    <section>-->
-<!--        <div>-->
-<!--            <span>Order status:</span>-->
-<!--            <span>XXXX</span>-->
-<!--            &lt;!&ndash;            THE FOLLOWING LINE ISOLATED BREAKS THE PROGRAM&ndash;&gt;-->
-<!--            &lt;!&ndash;            <span th:text="${yourOrder.getOrderStatus()}"></span>&ndash;&gt;-->
-<!--            &lt;!&ndash;            IT WORKED BEFORE @RequestParam GOT INTRODUCED&ndash;&gt;-->
-
-<!--            &lt;!&ndash;            IT APPEARS NO LONGER RECEIVING DATA FROM showTheBookPage() &ndash;&gt;-->
-<!--            &lt;!&ndash;            BUT ALSO IT DOES NOT HEAR THE handleCustomerInformation()&ndash;&gt;-->
-<!--            &lt;!&ndash;            IT DID HEAR THE showTheBookPage() BEFORE WITH ALL ITS STATEMENTS&ndash;&gt;-->
-
-<!--            &lt;!&ndash;            XXXX is a placeholder&ndash;&gt;-->
-<!--        </div>-->
-<!--        <br>-->
-<!--        <div>-->
-<!--            <span>My book:</span>-->
-<!--            <span>XXXX THE LOOP XXXX</span>-->
-<!--            &lt;!&ndash;                <ul>&ndash;&gt;-->
-<!--            &lt;!&ndash;                    <li th:each="bookDetail: ${myBookDetails}">&ndash;&gt;-->
-<!--            &lt;!&ndash;                        <span th:text="${bookDetail.getDetail()}"></span>&ndash;&gt;-->
-<!--            &lt;!&ndash;                        <span th:text="${bookDetail.getChosenFeature()}"> </span>&ndash;&gt;-->
-<!--            &lt;!&ndash;                    </li>&ndash;&gt;-->
-<!--            &lt;!&ndash;                </ul>&ndash;&gt;-->
-
-<!--            &lt;!&ndash;                THE SAME: THE LOOP DOESN'T WORK AND BREAKS THE CODE FOLLOWING @RequestParam&ndash;&gt;-->
-<!--        </div>-->
-<!--        <br>-->
-<!--    </section>-->
-
-<!--    <section>-->
-<!--        <div>-->
-<!--            &lt;!&ndash;  <a href="/gallery">Look at some more books in our gallery.</a>&ndash;&gt;-->
-<!--            <a href="/">Go back to the home page.</a>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--</main>-->
-<!--<footer>-->
-
-<!--</footer>-->
-<!--</body>-->
-<!--</html>-->
-
-
-<!--&lt;!&ndash;PREVIOUS VERSION&ndash;&gt;-->
-
-<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
-<!--&lt;!&ndash;<html lang="en" xmlns:th="http://www.thymeleaf.org">&ndash;&gt;-->
-
-<!--&lt;!&ndash;<head>&ndash;&gt;-->
-<!--&lt;!&ndash;  <meta charset="UTF-8">&ndash;&gt;-->
-<!--&lt;!&ndash;  <title>Receipt</title>&ndash;&gt;-->
-<!--&lt;!&ndash;<body>&ndash;&gt;-->
-<!--&lt;!&ndash;<nav>&ndash;&gt;-->
-<!--&lt;!&ndash;  <a href="/">Home</a>&ndash;&gt;-->
-<!--&lt;!&ndash;</nav>&ndash;&gt;-->
-<!--&lt;!&ndash;<header>&ndash;&gt;-->
-<!--&lt;!&ndash;  <h2>Kia's bookshop.</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;</header>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<main>&ndash;&gt;-->
-<!--&lt;!&ndash;  <h3>Thanks for shopping with us.</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;  <div>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span>Your order number is</span>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span th:text="${yourOrder.getOrderNumber()}">.</span><br>&ndash;&gt;-->
-<!--&lt;!&ndash;    <br>&ndash;&gt;-->
-<!--&lt;!&ndash;  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;  <div>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span>The invoice: EUR</span>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span th:text="${yourOrder.getTotalPriceOfOrder()}"></span><br>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span>Payment received:</span>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span th:text="${yourOrder.isInvoicePaid()}"></span><br>&ndash;&gt;-->
-<!--&lt;!&ndash;    <br>&ndash;&gt;-->
-<!--&lt;!&ndash;  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;  <div>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span>This order is for</span>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span th:text="${yourOrder.getCustomerName()}"></span>&ndash;&gt;-->
-<!--&lt;!&ndash;  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;  <div>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span>Shipping address:</span>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span th:text="${yourOrder.getCustomerAddress()}"></span><br>&ndash;&gt;-->
-<!--&lt;!&ndash;    <br>&ndash;&gt;-->
-<!--&lt;!&ndash;  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;  <div>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span>Order status:</span>&ndash;&gt;-->
-<!--&lt;!&ndash;    <span th:text="${yourOrder.getOrderStatus()}"></span>&ndash;&gt;-->
-<!--&lt;!&ndash;  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;  <br>&ndash;&gt;-->
-<!--&lt;!&ndash;  <section>&ndash;&gt;-->
-<!--&lt;!&ndash;    <div>&ndash;&gt;-->
-<!--&lt;!&ndash;      <span>My book:</span>&ndash;&gt;-->
-<!--&lt;!&ndash;      <ul>&ndash;&gt;-->
-<!--&lt;!&ndash;        <li th:each="bookDetail: ${myBookDetails}">&ndash;&gt;-->
-<!--&lt;!&ndash;          <span th:text="${bookDetail.getDetail()}">: </span>&ndash;&gt;-->
-<!--&lt;!&ndash;          <span th:text="${bookDetail.getChosenFeature()}"> </span>&ndash;&gt;-->
-<!--&lt;!&ndash;        </li>&ndash;&gt;-->
-<!--&lt;!&ndash;      </ul>&ndash;&gt;-->
-<!--&lt;!&ndash;    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;  </section>&ndash;&gt;-->
-<!--&lt;!&ndash;  <br>&ndash;&gt;-->
-
-<!--&lt;!&ndash;</main>&ndash;&gt;-->
-<!--&lt;!&ndash;<footer>&ndash;&gt;-->
-
-<!--&lt;!&ndash;</footer>&ndash;&gt;-->
-<!--&lt;!&ndash;</body>&ndash;&gt;-->
-<!--&lt;!&ndash;</html>&ndash;&gt;-->
