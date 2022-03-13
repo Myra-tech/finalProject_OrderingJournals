@@ -14,7 +14,6 @@ public class ReceiptController {
                                               @RequestParam(name = "customerName", required = true) String customerName,
                                               @RequestParam(name = "customerAddress") String customerAddress,
                                               @RequestParam(name = "customerEmail") String customerEmail) {
-
         Customer customer = new Customer(customerName, customerAddress, customerEmail);
         model.addAttribute("customerName", customer.getCustomerName());
         model.addAttribute("customerAddress", customer.getCustomerAddress());

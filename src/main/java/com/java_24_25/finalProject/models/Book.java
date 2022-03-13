@@ -1,6 +1,7 @@
 package com.java_24_25.finalProject.models;
 
 import lombok.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

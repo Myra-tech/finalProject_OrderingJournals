@@ -25,11 +25,9 @@ background-color: violet;
 footer{
 background-color: secondary;
 }
-
     </style>
 </head>
 <body>
-
 <header class="container-fluid p-3 bg-secondary text-white">
     <h1>Happy book</h1>
 </header>
@@ -44,30 +42,16 @@ background-color: secondary;
         <!-- details -->
         <div class="col-lg-3 p-0">
             <span>Your order number is</span><br>
-
             <span>The invoice: EUR</span><br>
-
-            <span>Order status:</span><br>
-            <br>
             <span>This order is for</span><br>
-
             <span>Shipping address:</span><br>
-            <br>
+            <span>Order status:</span><br>
             <span>My book:</span>
-            <!--                <ul>-->
-            <!--                    <li th:each="bookDetail: ${myBookDetails}">-->
-            <!--                        <span th:text="${bookDetail.getDetail()}"></span>-->
-            <!--                        <span th:text="${bookDetail.getChosenFeature()}"> </span>-->
-            <!--                    </li>-->
-            <!--                </ul>-->
-            <!--                THE SAME: THE LOOP DOESN'T WORK AND BREAKS THE CODE FOLLOWING @RequestParam-->
         </div>
         <!-- detail values -->
         <div class="col-lg-3 p-0">
-            <span>y13D</span><br>
-            <span>XXXX from calculator XXXX </span><br>
-            <span>PENDING</span><br>
-            <!--            <span>XXXX</span><br>--> <br>
+            <br>
+            <span th:text="${totalBookPrice}"></span><br>
             <span th:text="${customerName}"></span><br>
             <span th:text="${customerAddress}"></span><br>
             <br>
