@@ -1,16 +1,17 @@
 package com.java_24_25.finalProject.models;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Date;
 
-@Getter
 @Setter
-@AllArgsConstructor
+@Getter
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @Entity
 public class Book {
@@ -20,15 +21,17 @@ public class Book {
     private String coverType;
     private String leatherType;
     private String colourOfLeather;
-
     private String size;
     private int numberOfPages;
     private String paperType;
-
     private String paperBaseColour;
+    private String totalPrice;
+
+    @CreationTimestamp
     private Date orderDate;
 
-    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour) {
+    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages,
+                String paperType, String paperBaseColour) {
         this.coverType = coverType;
         this.leatherType = leatherType;
         this.colourOfLeather = colourOfLeather;
@@ -36,5 +39,19 @@ public class Book {
         this.numberOfPages = numberOfPages;
         this.paperType = paperType;
         this.paperBaseColour = paperBaseColour;
+    }
+
+    public Book(Long id, String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages,
+                String paperType, String paperBaseColour, String totalPrice) {
+
+        this.id = id;
+        this.coverType = coverType;
+        this.leatherType = leatherType;
+        this.colourOfLeather = colourOfLeather;
+        this.size = size;
+        this.numberOfPages = numberOfPages;
+        this.paperType = paperType;
+        this.paperBaseColour = paperBaseColour;
+        this.totalPrice = totalPrice;
     }
 }

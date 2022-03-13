@@ -1,19 +1,20 @@
 package com.java_24_25.finalProject.controllers;
 
+import com.java_24_25.finalProject.models.BookRequest;
+import com.java_24_25.finalProject.services.BookService;
 import com.java_24_25.finalProject.services.PageDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BookController {
 
     @Autowired
     PageDataService pageDataService;
-
-//    @Autowired
-//    BookRepository bookRepository;
+    BookService bookService;
 
     @GetMapping("/create")
     public String showCreateTheBookPage(Model model) {
@@ -23,15 +24,15 @@ public class BookController {
 
         return "createTheBook";
     }
-
-//    @PostMapping("/create")
-//    public String handleClientChoices(Book book) {
-//        System.out.println("this handles client choices");
-//        System.out.println(book);
-//        bookRepository.save(book);
-////        return "redirect:createTheBook";
-////        return "createTheBook";
-//        return "redirect:create";   /// after 'redirect' you give the link not the html file
-//    }
-
+    @PostMapping("/send-message")
+    public String handleGetBook(BookRequest bookRequest){
+        try {
+            bookService.createBook(bookRequest);
+            return "redirect:recipe/"+ bookRequest.getId();
+        }catch (Exception ex){
+            System.out.println(ex);
+            return "redirect:recipe/"+ bookRequest.getId()
+                    + "/?status=get_book&message="+ex.getMessage();
+        }
+    }
 }
