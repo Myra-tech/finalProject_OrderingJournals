@@ -1,6 +1,6 @@
 package com.java_24_25.finalProject.controllers;
 
-import com.java_24_25.finalProject.models.BookRequest;
+import com.java_24_25.finalProject.models.Book;
 import com.java_24_25.finalProject.services.BookService;
 import com.java_24_25.finalProject.services.PageDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping
 public class BookController {
 
     @Autowired
@@ -24,14 +26,15 @@ public class BookController {
 
         return "createTheBook";
     }
-    @PostMapping("/send-message")
-    public String handleGetBook(BookRequest bookRequest){
+
+    @PostMapping("/create")
+    public String handleReceiptPage(Book book){
         try {
-            bookService.createBook(bookRequest);
-            return "redirect:recipe/"+ bookRequest.getId();
+            bookService.createBook(book);
+            return "redirect:yourBook";
         }catch (Exception ex){
             System.out.println(ex);
-            return "redirect:recipe/"+ bookRequest.getId()
+            return "redirect:yourBook"
                     + "/?status=get_book&message="+ex.getMessage();
         }
     }

@@ -22,7 +22,7 @@ public class Book {
     private String leatherType;
     private String colourOfLeather;
     private String size;
-    private int numberOfPages;
+    private String numberOfPages;
     private String paperType;
     private String paperBaseColour;
     private String totalPrice;
@@ -30,7 +30,7 @@ public class Book {
     @CreationTimestamp
     private Date orderDate;
 
-    public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages,
+    public Book(String coverType, String leatherType, String colourOfLeather, String size, String numberOfPages,
                 String paperType, String paperBaseColour) {
         this.coverType = coverType;
         this.leatherType = leatherType;
@@ -41,7 +41,7 @@ public class Book {
         this.paperBaseColour = paperBaseColour;
     }
 
-    public Book(Long id, String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages,
+    public Book(Long id, String coverType, String leatherType, String colourOfLeather, String size, String numberOfPages,
                 String paperType, String paperBaseColour, String totalPrice) {
 
         this.id = id;

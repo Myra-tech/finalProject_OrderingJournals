@@ -3,17 +3,18 @@ package com.java_24_25.finalProject.controllers;
 
 import com.java_24_25.finalProject.Calculator;
 import com.java_24_25.finalProject.models.Book;
+import com.java_24_25.finalProject.services.BookService;
 import com.java_24_25.finalProject.services.PageDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 
 @Controller
 public class CustomerDetailController {
-
     @Autowired
     PageDataService pageDataService;
 
@@ -23,7 +24,7 @@ public class CustomerDetailController {
                                   @RequestParam(name = "leatherType") String leatherType,
                                   @RequestParam(name = "colourOfLeather") String colourOfLeather,
                                   @RequestParam(name = "size") String size,
-                                  @RequestParam(name = "numberOfPages") int numberOfPages,
+                                  @RequestParam(name = "numberOfPages") String numberOfPages,
                                   @RequestParam(name = "paperType") String paperType,
                                   @RequestParam(name = "paperBaseColour") String paperBaseColour,
                                   String totalPrice
@@ -63,9 +64,24 @@ public class CustomerDetailController {
         double paperColorPrice = calculator.calculatePaperColorPrice(paperBaseColour, paperType, size, numberOfPages);
         double leatherColourPrice = calculator.calculateLeatherColorPrice(leatherType, colourOfLeather, size);
 
-        double totalBookPrice = calculator.calculateTotalBookPrice(coverPrice, leatherTypePrice, numberOfPagesPrice, paperColorPrice, leatherColourPrice);
+        double totalBookPrice = calculator.calculateTotalBookPrice(coverPrice, leatherTypePrice, numberOfPagesPrice,
+                paperColorPrice, leatherColourPrice);
         model.addAttribute("totalPrice", String.format("%.2f", totalBookPrice));
-
         return "yourBook";
     }
+
+    @PostMapping("/the_book")
+    public String handleGetBook(Book book){
+        try {
+            BookService bookService = null;
+            assert false;
+            bookService.createBook(book);
+            return "redirect:recipe";
+        }catch (Exception ex){
+            System.out.println(ex);
+            return "redirect:recipe"
+                    + "/?status=get_book&message="+ex.getMessage();
+        }
+    }
+
 }

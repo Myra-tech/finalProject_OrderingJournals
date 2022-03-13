@@ -1,5 +1,10 @@
 package com.java_24_25.finalProject;
 
+import lombok.Getter;
+import lombok.ToString;
+
+@ToString
+@Getter
 public class Calculator {
 
     public double calculateThePriceForTheCover(String coverType) {
@@ -67,7 +72,7 @@ public class Calculator {
         return leatherTypePrice;
     }
 
-    public double calculatePaperTypePrice(String paperType, String size, int numberOfPages) {
+    public double calculatePaperTypePrice(String paperType, String size, String numberOfPages) {
         double paperTypePrice = 0;
 
         if (paperType.equals("sketch")) {
@@ -100,18 +105,18 @@ public class Calculator {
         return paperTypePrice;
     }
 
-    public double calculateNumberOfPagesPrice(double paperTypePrice, int numberOfPages) {
+    public double calculateNumberOfPagesPrice(double paperTypePrice, String numberOfPages) {
         double newPaperTypePrice = paperTypePrice;
 
-        if (numberOfPages == 100) {
+        if (numberOfPages == "100") {
             newPaperTypePrice = paperTypePrice * 2;
-        } else if (numberOfPages == 150) {
+        } else if (numberOfPages == "150") {
             newPaperTypePrice = paperTypePrice * 3;
-        } else if (numberOfPages == 200) {
+        } else if (numberOfPages == "200") {
             newPaperTypePrice = paperTypePrice * 4;
-        } else if (numberOfPages == 250) {
+        } else if (numberOfPages == "250") {
             newPaperTypePrice = paperTypePrice * 5;
-        } else if (numberOfPages == 300) {
+        } else if (numberOfPages == "300") {
             newPaperTypePrice = paperTypePrice * 6;
         } else {
             System.out.println("The entry is not recognized.");
@@ -121,7 +126,7 @@ public class Calculator {
         return newPaperTypePrice;
     }
 
-    public double calculatePaperColorPrice(String paperBaseColour, String paperType, String size, int numberOfPages) {
+    public double calculatePaperColorPrice(String paperBaseColour, String paperType, String size, String numberOfPages) {
         double paperColorPrice = 0;
         double tempColorPrice = 0;
 
@@ -136,15 +141,15 @@ public class Calculator {
         }
         System.out.println("Price for non-white sketch paper when size is " + size + " is " + tempColorPrice + ".");
 
-        if (numberOfPages == 100) {
+        if (numberOfPages == "100") {
             paperColorPrice = tempColorPrice * 2;
-        } else if (numberOfPages == 150) {
+        } else if (numberOfPages == "150") {
             paperColorPrice = tempColorPrice * 3;
-        } else if (numberOfPages == 200) {
+        } else if (numberOfPages == "200") {
             paperColorPrice = tempColorPrice * 4;
-        } else if (numberOfPages == 250) {
+        } else if (numberOfPages == "250") {
             paperColorPrice = tempColorPrice * 5;
-        } else if (numberOfPages == 300) {
+        } else if (numberOfPages == "300") {
             paperColorPrice = tempColorPrice * 6;
         } else {
             System.out.println("The entry is not recognized.");
@@ -196,15 +201,16 @@ public class Calculator {
             System.out.println("The entry is not recognized.");
         }
 
-        System.out.println("Price for " + leatherType + " leather in " + colourOfLeather + " colour of " + size + " book is " + leatherColourPrice + ".");
+        System.out.println("Price for " + leatherType + " leather in " + colourOfLeather + " colour of " + size +
+                " book is " + leatherColourPrice + ".");
         return leatherColourPrice;
     }
 
-    public double calculateTotalBookPrice(double coverPrice, double leatherTypePrice, double numberOfPagesPrice, double paperColorPrice, double leatherColourPrice) {
+    public double calculateTotalBookPrice(double coverPrice, double leatherTypePrice, double numberOfPagesPrice,
+                                          double paperColorPrice, double leatherColourPrice) {
 
         double totalBookPrice = coverPrice + leatherTypePrice + numberOfPagesPrice + paperColorPrice + leatherColourPrice;
         System.out.println("The total price of the book is " + totalBookPrice + ".");
-
         return totalBookPrice;
     }
 }
