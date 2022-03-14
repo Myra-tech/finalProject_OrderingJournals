@@ -32,65 +32,46 @@ background-color: violet;
         <a href="/" class="btn btn-dark p-3" type="button">Back to home!</a>
     </div>
     <div class="row">
-        <div class="col-lg-6">
-            <h5>Choose again</h5>
+        <h5>Please enter your details</h5>
+    </div>
+
+
+
+    <div class="row mb-1"style="background-color:violet; height: 50px"></div>
+    <div class="row mb-1"style="background-color:violet;">
+
+        <div class="col-lg-4 p-0"></div>
+        <div class="col-lg-2 p-0">
+            <div><label class="form-label">Name, surname</label></div><br>
+            <div> <label class="form-label">Shipping address:</label></div><br>
+            <div><label class="form-label"> Email:</label></div>
         </div>
-        <div class="col-lg-4">
-            <h5>Your chosen book</h5>
-        </div>
-        <div class="col-lg-2"></div>
+        <div class="col-lg-3 p-0">
+            <form method="get" action="/receipt">
+                <div class="mb-4 input-group">
+                    <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                    <input type="text" name="customerName">
+                </div>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text"><i class="bi bi-house-fill"></i></span>
+                    <input type="text" name="customerAddress">
+                </div>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text"><i class="bi bi-at"></i></span>
+                    <input type="email" name="customerEmail">
+                </div>
+                <input type="hidden" name="bookId" th:value="${bookId}">
+                <input type="hidden" name="totalPrice" th:value="${totalPrice}">
+                </div>
+
+        <div class="col-lg-3 p-0"></div>
     </div>
 
-    <!--LEFT SIDE-->
-
-        <div class="row justify-content-left my-5">
-            <div class="col-lg-1 p-1"></div>
-            <div class="col-lg-4 p-1">
-
-
-            </div>
-            <div class="col-lg-1 p-1"></div>
-            <!--RIGHT SIDE-->
-            <div class="col-lg-5 p-1">
-
-                <div class="row my-1">
-
-    <h5>Please enter your details</h5>
-    <div class="row mb-1"style="background-color:violet; height: 30px"></div>
-    <div class="col-lg-6 p-0">
-        <div><label class="form-label">Name, surname</label></div><br>
-        <div> <label class="form-label">Shipping address:</label></div><br>
-        <div><label class="form-label"> Email:</label></div>
-    </div>
-    <div class="col-lg-6 p-0">
-        <form method="get" action="/receipt">
-            <div class="mb-4 input-group">
-                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                <input type="text" name="customerName">
-            </div>
-            <div class="mb-4 input-group">
-                <span class="input-group-text"><i class="bi bi-house-fill"></i></span>
-                <input type="text" name="customerAddress">
-            </div>
-            <div class="mb-4 input-group">
-                <span class="input-group-text"><i class="bi bi-at"></i></span>
-                <input type="email" name="customerEmail">
-            </div>
-            <input type="hidden" name="bookId" th:value="${bookId}">
-            <input type="hidden" name="totalPrice" th:value="${totalPrice}">
-
-    </div>
-
-    </div>
-    </div>
-
-
-    <div class="col-lg-1 p-3"></div>
-    </div>
+    <div class="row mb-1"style="background-color:violet; height: 50px"></div>
 
     <div class="row mb-1">
         <button type="submit" class="btn btn-secondary p-3">
-            Order chosen book
+            Commit order
         </button>
     </div>
     </form>

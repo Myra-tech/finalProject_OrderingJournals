@@ -1,7 +1,6 @@
 package com.java_24_25.finalProject.models;
 
 import lombok.*;
-
 import javax.persistence.*;
 
 @AllArgsConstructor

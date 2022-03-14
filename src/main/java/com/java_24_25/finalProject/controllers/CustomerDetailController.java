@@ -71,7 +71,7 @@ public class CustomerDetailController {
 
 
 
-    @PostMapping("/the_book")
+    /*@PostMapping("/the_book")
     public String handleGetBook(Book book){
         try {
             BookService bookService = null;
@@ -83,6 +83,6 @@ public class CustomerDetailController {
             return "redirect:recipe"
                     + "/?status=get_book&message="+ex.getMessage();
         }
-    }
+    }*/
 
 }
