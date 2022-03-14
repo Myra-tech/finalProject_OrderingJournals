@@ -28,6 +28,11 @@ public class Book {
 
     private String paperBaseColour;
     private Date orderDate;
+    private double bookTotalPrice;
+
+    public Book(double bookTotalPrice) {
+        this.bookTotalPrice = bookTotalPrice;
+    }
 
     public Book(String coverType, String leatherType, String colourOfLeather, String size, int numberOfPages, String paperType, String paperBaseColour) {
         this.coverType = coverType;

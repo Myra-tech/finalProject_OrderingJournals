@@ -15,6 +15,8 @@ public class CustomerDetailController {
 
     @Autowired
     PageDataService pageDataService;
+    private String totalPrice;
+    //public double totalBookPrice;
 
     @GetMapping("/the_book")
     public String showTheBookPage(Model model,
@@ -24,8 +26,8 @@ public class CustomerDetailController {
                                   @RequestParam(name = "size") String size,
                                   @RequestParam(name = "numberOfPages") int numberOfPages,
                                   @RequestParam(name = "paperType") String paperType,
-                                  @RequestParam(name = "paperBaseColour") String paperBaseColour,
-                                  String totalPrice
+                                  @RequestParam(name = "paperBaseColour") String paperBaseColour
+
     ) {
 
         System.out.println(pageDataService.getProjectTitle()); // shows in the console that it works
@@ -66,4 +68,5 @@ public class CustomerDetailController {
         model.addAttribute("totalPrice", String.format("%.2f", totalBookPrice));
         return "yourBook";
     }
+
 }

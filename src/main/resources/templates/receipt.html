@@ -41,21 +41,19 @@ background-color: secondary;
         <div class="col-lg-4 p-0"></div>
         <!-- details -->
         <div class="col-lg-3 p-0">
-            <span>Your order number is</span><br>
             <span>The invoice: EUR</span><br>
             <span>This order is for</span><br>
             <span>Shipping address:</span><br>
-            <span>Order status:</span><br>
-            <span>My book:</span>
+            <span>Order status:</span><br><br>
+            <span> Order confirmation has been sent to </span>
         </div>
         <!-- detail values -->
         <div class="col-lg-3 p-0">
-            <br>
-            <span th:text="${totalBookPrice}"></span><br>
+            <span th:text="${totalPrice}"></span><br>
             <span th:text="${customerName}"></span><br>
             <span th:text="${customerAddress}"></span><br>
-            <br>
-            <span>XXXX THE LOOP XXXX</span>
+            <span>Pending</span><br><br>
+            <span th:text="${customerEmail}"></span><br>
         </div>
         <!-- border right -->
         <div class="col-lg-2 p-0"></div>
