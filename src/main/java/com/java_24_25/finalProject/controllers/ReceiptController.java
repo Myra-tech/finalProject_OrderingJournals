@@ -3,7 +3,10 @@ package com.java_24_25.finalProject.controllers;
 import com.java_24_25.finalProject.Calculator;
 import com.java_24_25.finalProject.models.Book;
 import com.java_24_25.finalProject.models.Customer;
+import com.java_24_25.finalProject.models.Order;
+import com.java_24_25.finalProject.repository.OrderRepository;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,48 +16,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ReceiptController {
 
+    @Autowired
+    OrderRepository orderRepository;
+
     @GetMapping("/receipt")
     public String showPersonalOrderStatusPage(Model model,
                                               @RequestParam(name = "customerName", required = true) String customerName,
                                               @RequestParam(name = "customerAddress") String customerAddress,
                                               @RequestParam(name = "customerEmail") String customerEmail,
-                                              String totalPrice){
-        Customer customer = new Customer(customerName, customerAddress, customerEmail);
-        model.addAttribute("customerName", customer.getCustomerName());
-        model.addAttribute("customerAddress", customer.getCustomerAddress());
-        model.addAttribute("customerEmail", customer.getCustomerEmail());
+                                              @RequestParam(name = "bookId") String bookId,
+                                              @RequestParam(name = "totalPrice") String totalPrice){
+        Order order = new Order(null, customerName, customerAddress, customerEmail, totalPrice);
+        try {
+            orderRepository.save(order);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        model.addAttribute("customerName", order.getCustomerName());
+        model.addAttribute("customerAddress", order.getCustomerAddress());
+        model.addAttribute("customerEmail", order.getCustomerEmail());
+        model.addAttribute("totalPrice", totalPrice);
 
         System.out.println("The user is checking the order status.");
-
-        totalPrice = String.valueOf(model.getAttribute("totalPrice"));
-        System.out.println(totalPrice);
-
-        Calculator calculator = new Calculator();
-
-        double totalBookPrice = calculator.calculateTotalBookPrice(
-                calculator.calculateThePriceForTheCover(
-                        String.valueOf(model.getAttribute("coverType"))),
-                calculator.calculateLeatherTypePrice(
-                        String.valueOf(model.getAttribute("leatherType")),
-                        String.valueOf(model.getAttribute("coverType")),
-                        String.valueOf(model.getAttribute("size"))),
-                calculator.calculateNumberOfPagesPrice(
-                calculator.calculatePaperTypePrice(
-                        String.valueOf(model.getAttribute("paperType")),
-                        String.valueOf(model.getAttribute("size")),
-                        String.valueOf(model.getAttribute("numberOfPages"))),
-                String.valueOf(model.getAttribute("numberOfPages"))),
-                calculator.calculatePaperColorPrice(
-                        String.valueOf(model.getAttribute("paperBaseColour")),
-                        String.valueOf(model.getAttribute("paperType")),
-                        String.valueOf(model.getAttribute("size")),
-                        String.valueOf(model.getAttribute("numberOfPages"))),
-                calculator.calculateLeatherColorPrice(
-                        String.valueOf(model.getAttribute("leatherType")),
-                        String.valueOf(model.getAttribute("colourOfLeather")),
-                        String.valueOf(model.getAttribute("size")))
-        );
-        model.addAttribute("totalPrice", String.format("%.2f", totalBookPrice));
 
         return "receipt";
     }

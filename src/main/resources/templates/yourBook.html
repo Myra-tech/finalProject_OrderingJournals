@@ -188,6 +188,8 @@ background-color: violet;
                             <i class="bi bi-question-circle text-muted"></i>
                         </span>
                     </span>
+                    <input type="hidden" name="totalPrice" th:value="${totalPrice}" />
+
                 </div>
 
             </div>
@@ -220,32 +222,14 @@ background-color: violet;
                 </div>
                 <div class="row my-1">
                     <div class="row mb-3">
-                        <button type="submit" class="btn btn-secondary p-3">
-                            Calculate the price.
-                        </button>
+
                     </div>
-    </form>
-    <h5>Please enter your details</h5>
+
+
     <div class="row mb-1"style="background-color:violet; height: 30px"></div>
+
     <div class="col-lg-6 p-0">
-        <div><label class="form-label">Name, surname</label></div><br>
-        <div> <label class="form-label">Shipping address:</label></div><br>
-        <div><label class="form-label"> Email:</label></div>
-    </div>
-    <div class="col-lg-6 p-0">
-        <form method="get" action="/receipt">
-            <div class="mb-4 input-group">
-                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                <input type="text" name="customerName">
-            </div>
-            <div class="mb-4 input-group">
-                <span class="input-group-text"><i class="bi bi-house-fill"></i></span>
-                <input type="text" name="customerAddress">
-            </div>
-            <div class="mb-4 input-group">
-                <span class="input-group-text"><i class="bi bi-at"></i></span>
-                <input type="email" name="customerEmail">
-            </div>
+
     </div>
 
     </div>
@@ -256,9 +240,8 @@ background-color: violet;
     </div>
 
     <div class="row mb-1">
-        <button type="submit" class="btn btn-secondary p-3">
-            Order chosen book
-        </button>
+        <input type="submit" name="submitForm" value="calculate" class="btn btn-secondary p-3"/>
+        <input type="submit" name="submitForm" value="order" class="btn btn-secondary p-3"/>
     </div>
     </form>
 </main>

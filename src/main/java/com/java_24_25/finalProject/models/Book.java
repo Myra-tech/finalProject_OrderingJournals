@@ -41,7 +41,7 @@ public class Book {
         this.paperBaseColour = paperBaseColour;
     }
 
-    public Book(Long id, String coverType, String leatherType, String colourOfLeather, String size, String numberOfPages,
+    public Book( String coverType, String leatherType, String colourOfLeather, String size, String numberOfPages,
                 String paperType, String paperBaseColour, String totalPrice) {
 
         this.id = id;
