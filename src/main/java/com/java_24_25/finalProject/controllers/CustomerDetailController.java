@@ -56,7 +56,7 @@ public class CustomerDetailController {
         Calculator calculator = new Calculator();
         double coverPrice = calculator.calculateThePriceForTheCover(coverType);
         double leatherTypePrice = calculator.calculateLeatherTypePrice(leatherType, coverType, size);
-        double paperTypePrice = calculator.calculatePaperTypePrice(paperType, size, numberOfPages);
+        double paperTypePrice = calculator.calculatePaperTypePrice(paperType, size);
         double numberOfPagesPrice = calculator.calculateNumberOfPagesPrice(paperTypePrice, numberOfPages);
 
         double paperColorPrice = calculator.calculatePaperColorPrice(paperBaseColour, paperType, size, numberOfPages);

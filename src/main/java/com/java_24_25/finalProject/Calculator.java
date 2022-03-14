@@ -6,10 +6,10 @@ public class Calculator {
         double coverPrice = 0.0;
 
         if (coverType.equals("journal")) {
-            coverPrice = 0.0d;
+            coverPrice = 20.0d;
             System.out.println("The price of journal is " + coverPrice);
         } else {
-            coverPrice = 0.3d;
+            coverPrice = 30.0d;
             System.out.println("The price of hardcover is " + coverPrice);
         }
         return coverPrice;
@@ -21,24 +21,23 @@ public class Calculator {
         if (coverType.equals("journal")) {
             if (leatherType.equals("chrome")) {
                 if (size.equals("A5")) {
-                    leatherTypePrice = 5.8;
+                    leatherTypePrice = 6.0;
                 } else if (size.equals("B5")) {
                     leatherTypePrice = 7;
                 } else if (size.equals("A4")) {
-                    leatherTypePrice = 8.75;
+                    leatherTypePrice = 9.0;
                 } else {
                     System.out.println("The entry is not recognized.");
                 }
             } else if (leatherType.equals("vegetable")) {
                 if (size.equals("A5")) {
-                    leatherTypePrice = 9.15;
+                    leatherTypePrice = 9.2;
                 } else if (size.equals("B5")) {
-                    leatherTypePrice = 11;
+                    leatherTypePrice = 11.0;
                 } else if (size.equals("A4")) {
-                    leatherTypePrice = 13.75;
-                } else {
+                    leatherTypePrice = 14.0;
                 }
-            } else System.out.println("The entry is not recognized.");
+            }
         } else if (coverType.equals("hardcover")) {
             if (leatherType.equals("chrome")) {
                 if (size.equals("A5")) {
@@ -47,32 +46,29 @@ public class Calculator {
                     leatherTypePrice = 10;
                 } else if (size.equals("A4")) {
                     leatherTypePrice = 12.5;
-                } else {
-                    System.out.println("The entry is not recognized.");
                 }
             } else if (leatherType.equals("vegetable")) {
                 if (size.equals("A5")) {
                     leatherTypePrice = 12.5;
                 } else if (size.equals("B5")) {
-                    leatherTypePrice = 15;
+                    leatherTypePrice = 15.0;
                 } else if (size.equals("A4")) {
-                    leatherTypePrice = 18.75;
-                } else {
-                    System.out.println("The entry is not recognized.");
+                    leatherTypePrice = 19.0;
                 }
-            } else System.out.println("The entry is not recognized.");
-        } else System.out.println("The entry is not recognized.");
-
-        System.out.println("Price of the leather for " + coverType + " and leather type " + leatherType + " equals " + leatherTypePrice + ".");
+            }
+        } else {
+            System.out.println("The entry is not recognized.");
+        }
+        System.out.println("'leatherTypePrice' for coverType: " + coverType + "; leatherType: " + leatherType + "; of size: " + size + " IS " + leatherTypePrice);
         return leatherTypePrice;
     }
 
-    public double calculatePaperTypePrice(String paperType, String size, int numberOfPages) {
+    public double calculatePaperTypePrice(String paperType, String size) {
         double paperTypePrice = 0;
 
         if (paperType.equals("sketch")) {
             if (size.equals("A5")) {
-                paperTypePrice = 2.8;
+                paperTypePrice = 3.0;
             } else if (size.equals("B5")) {
                 paperTypePrice = 3.5;
             } else if (size.equals("A4")) {
@@ -88,11 +84,11 @@ public class Calculator {
             }
         } else if (paperType.equals("watercolor")) {
             if (size.equals("A5")) {
-                paperTypePrice = 4;
+                paperTypePrice = 5.0;
             } else if (size.equals("B5")) {
-                paperTypePrice = 5.8;
+                paperTypePrice = 7.0;
             } else if (size.equals("A4")) {
-                paperTypePrice = 6.5;
+                paperTypePrice = 8.5;
             }
         } else System.out.println("The entry is not recognized.");
 
@@ -169,19 +165,19 @@ public class Calculator {
             } else if (colourOfLeather.equals("black") || colourOfLeather.equals("dark brown") || colourOfLeather.equals("caramel") ||
                     colourOfLeather.equals("red")) {
                 if (size.equals("A5")) {
-                    leatherColourPrice = 2;
+                    leatherColourPrice = 3.0;
                 } else if (size.equals("B5")) {
-                    leatherColourPrice = 3.5;
+                    leatherColourPrice = 4.0;
                 } else if (size.equals("A4")) {
-                    leatherColourPrice = 5;
+                    leatherColourPrice = 5.0;
                 }
             } else if (colourOfLeather.equals("white leather")) {
                 if (size.equals("A5")) {
-                    leatherColourPrice = 2.7;
+                    leatherColourPrice = 4.0;
                 } else if (size.equals("B5")) {
-                    leatherColourPrice = 4.7;
+                    leatherColourPrice = 6.0;
                 } else if (size.equals("A4")) {
-                    leatherColourPrice = 6.5;
+                    leatherColourPrice = 8.0;
                 }
             } else if (colourOfLeather.equals("multi")) {
                 if (size.equals("A5")) {
@@ -208,3 +204,4 @@ public class Calculator {
         return totalBookPrice;
     }
 }
+
