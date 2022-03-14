@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:Set-Cookie="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -214,7 +214,8 @@ background-color: violet;
                         <div><span th:text="${numberOfPages}"></span></div>
                         <div><span th:text="${paperType}"></span></div>
                         <div><span th:text="${paperBaseColour}"></span></div>
-                        <div><h2><b><span name="totalPrice" th:text="${totalPrice}"></span></b></h2></div>
+
+                        <div><h2><b><span name="totalPrice" th:text="${totalPrice}" ></span></b></h2></div>
                     </div>
                 </div>
                 <div class="row my-1">

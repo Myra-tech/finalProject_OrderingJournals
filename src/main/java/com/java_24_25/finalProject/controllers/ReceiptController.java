@@ -26,30 +26,34 @@ public class ReceiptController {
 
         System.out.println("The user is checking the order status.");
 
-        Calculator calculator = new Calculator();
-        double coverPrice = calculator.calculateThePriceForTheCover(
-                String.valueOf(model.getAttribute("coverType")));
-        double leatherTypePrice = calculator.calculateLeatherTypePrice(
-                String.valueOf(model.getAttribute("leatherType")),
-                String.valueOf(model.getAttribute("coverType")),
-                String.valueOf(model.getAttribute("size")));
-        double paperTypePrice = calculator.calculatePaperTypePrice(
-                String.valueOf(model.getAttribute("paperType")),
-                String.valueOf(model.getAttribute("size")),
-                String.valueOf(model.getAttribute("numberOfPages")));
-        double numberOfPagesPrice = calculator.calculateNumberOfPagesPrice(paperTypePrice,
-                String.valueOf(model.getAttribute("numberOfPages")));
-        double paperColorPrice = calculator.calculatePaperColorPrice(
-                String.valueOf(model.getAttribute("paperBaseColour")),
-                String.valueOf(model.getAttribute("paperType")),
-                String.valueOf(model.getAttribute("size")),
-                String.valueOf(model.getAttribute("numberOfPages")));
-        double leatherColourPrice = calculator.calculateLeatherColorPrice(
-                String.valueOf(model.getAttribute("leatherType")),
-                String.valueOf(model.getAttribute("colourOfLeather")),
-                String.valueOf(model.getAttribute("size")));
+        totalPrice = String.valueOf(model.getAttribute("totalPrice"));
+        System.out.println(totalPrice);
 
-        double totalBookPrice = calculator.calculateTotalBookPrice(coverPrice, leatherTypePrice, numberOfPagesPrice, paperColorPrice, leatherColourPrice);
+        Calculator calculator = new Calculator();
+
+        double totalBookPrice = calculator.calculateTotalBookPrice(
+                calculator.calculateThePriceForTheCover(
+                        String.valueOf(model.getAttribute("coverType"))),
+                calculator.calculateLeatherTypePrice(
+                        String.valueOf(model.getAttribute("leatherType")),
+                        String.valueOf(model.getAttribute("coverType")),
+                        String.valueOf(model.getAttribute("size"))),
+                calculator.calculateNumberOfPagesPrice(
+                calculator.calculatePaperTypePrice(
+                        String.valueOf(model.getAttribute("paperType")),
+                        String.valueOf(model.getAttribute("size")),
+                        String.valueOf(model.getAttribute("numberOfPages"))),
+                String.valueOf(model.getAttribute("numberOfPages"))),
+                calculator.calculatePaperColorPrice(
+                        String.valueOf(model.getAttribute("paperBaseColour")),
+                        String.valueOf(model.getAttribute("paperType")),
+                        String.valueOf(model.getAttribute("size")),
+                        String.valueOf(model.getAttribute("numberOfPages"))),
+                calculator.calculateLeatherColorPrice(
+                        String.valueOf(model.getAttribute("leatherType")),
+                        String.valueOf(model.getAttribute("colourOfLeather")),
+                        String.valueOf(model.getAttribute("size")))
+        );
         model.addAttribute("totalPrice", String.format("%.2f", totalBookPrice));
 
         return "receipt";

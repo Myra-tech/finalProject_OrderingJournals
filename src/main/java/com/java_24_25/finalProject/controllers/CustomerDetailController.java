@@ -1,8 +1,8 @@
 package com.java_24_25.finalProject.controllers;
 
-
 import com.java_24_25.finalProject.Calculator;
 import com.java_24_25.finalProject.models.Book;
+import com.java_24_25.finalProject.models.Customer;
 import com.java_24_25.finalProject.services.BookService;
 import com.java_24_25.finalProject.services.PageDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +11,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import java.util.ArrayList;
 
 @Controller
 public class CustomerDetailController {
     @Autowired
     PageDataService pageDataService;
+    String totalPrice;
 
     @GetMapping("/the_book")
     public String showTheBookPage(Model model,

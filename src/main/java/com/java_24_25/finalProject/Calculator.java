@@ -21,47 +21,47 @@ public class Calculator {
     }
 
     public double calculateLeatherTypePrice(String leatherType, String coverType, String size) {
-        double leatherTypePrice = 0;
+        double leatherTypePrice = 0.0;
 
         if (coverType.equals("journal")) {
             if (leatherType.equals("chrome")) {
                 if (size.equals("A5")) {
-                    leatherTypePrice = 6;
+                    leatherTypePrice = 6d;
                 } else if (size.equals("B5")) {
-                    leatherTypePrice = 7;
+                    leatherTypePrice = 7d;
                 } else if (size.equals("A4")) {
-                    leatherTypePrice = 9;
+                    leatherTypePrice = 9d;
                 } else {
                     System.out.println("The entry is not recognized.");
                 }
             } else if (leatherType.equals("vegetable")) {
                 if (size.equals("A5")) {
-                    leatherTypePrice = 9.2;
+                    leatherTypePrice = 9.2d;
                 } else if (size.equals("B5")) {
-                    leatherTypePrice = 11;
+                    leatherTypePrice = 11d;
                 } else if (size.equals("A4")) {
-                    leatherTypePrice = 14;
+                    leatherTypePrice = 14d;
                 } else {
                 }
             } else System.out.println("The entry is not recognized.");
         } else if (coverType.equals("hardcover")) {
             if (leatherType.equals("chrome")) {
                 if (size.equals("A5")) {
-                    leatherTypePrice = 8.3;
+                    leatherTypePrice = 8.3d;
                 } else if (size.equals("B5")) {
-                    leatherTypePrice = 10;
+                    leatherTypePrice = 10d;
                 } else if (size.equals("A4")) {
-                    leatherTypePrice = 12.5;
+                    leatherTypePrice = 12.5d;
                 } else {
                     System.out.println("The entry is not recognized.");
                 }
             } else if (leatherType.equals("vegetable")) {
                 if (size.equals("A5")) {
-                    leatherTypePrice = 12.5;
+                    leatherTypePrice = 12.5d;
                 } else if (size.equals("B5")) {
-                    leatherTypePrice = 15;
+                    leatherTypePrice = 15d;
                 } else if (size.equals("A4")) {
-                    leatherTypePrice = 19;
+                    leatherTypePrice = 19d;
                 } else {
                     System.out.println("The entry is not recognized.");
                 }
@@ -77,27 +77,27 @@ public class Calculator {
 
         if (paperType.equals("sketch")) {
             if (size.equals("A5")) {
-                paperTypePrice = 3;
+                paperTypePrice = 3d;
             } else if (size.equals("B5")) {
-                paperTypePrice = 3.5;
+                paperTypePrice = 3.5d;
             } else if (size.equals("A4")) {
-                paperTypePrice = 4.3;
+                paperTypePrice = 4.3d;
             }
         } else if (paperType.equals("drawing")) {
             if (size.equals("A5")) {
-                paperTypePrice = 3.5;
+                paperTypePrice = 3.5d;
             } else if (size.equals("B5")) {
-                paperTypePrice = 4.4;
+                paperTypePrice = 4.4d;
             } else if (size.equals("A4")) {
-                paperTypePrice = 5.3;
+                paperTypePrice = 5.3d;
             }
         } else if (paperType.equals("watercolor")) {
             if (size.equals("A5")) {
-                paperTypePrice = 5;
+                paperTypePrice = 5d;
             } else if (size.equals("B5")) {
-                paperTypePrice = 7;
+                paperTypePrice = 7d;
             } else if (size.equals("A4")) {
-                paperTypePrice = 8.5;
+                paperTypePrice = 8.5d;
             }
         } else System.out.println("The entry is not recognized.");
 
@@ -132,11 +132,11 @@ public class Calculator {
 
         if (paperType.equals("sketch") && (!paperBaseColour.equals("white"))) {
             if (size.equals("A5")) {
-                tempColorPrice = 2.2;
+                tempColorPrice = 2.2d;
             } else if (size.equals("B5")) {
-                tempColorPrice = 2.7;
+                tempColorPrice = 2.7d;
             } else if (size.equals("A4")) {
-                tempColorPrice = 3.3;
+                tempColorPrice = 3.3d;
             }
         }
         System.out.println("Price for non-white sketch paper when size is " + size + " is " + tempColorPrice + ".");
@@ -165,36 +165,36 @@ public class Calculator {
         if (leatherType.equals("vegetable")) {
             if (colourOfLeather.equals("natural")) {
                 if (size.equals("A5")) {
-                    leatherColourPrice = 0.5;
+                    leatherColourPrice = 0.5d;
                 } else if (size.equals("B5")) {
-                    leatherColourPrice = 0.75;
+                    leatherColourPrice = 0.75d;
                 } else if (size.equals("A4")) {
-                    leatherColourPrice = 1;
+                    leatherColourPrice = 1d;
                 }
             } else if (colourOfLeather.equals("black") || colourOfLeather.equals("dark brown") || colourOfLeather.equals("caramel") ||
                     colourOfLeather.equals("red")) {
                 if (size.equals("A5")) {
-                    leatherColourPrice = 3;
+                    leatherColourPrice = 3d;
                 } else if (size.equals("B5")) {
-                    leatherColourPrice = 4;
+                    leatherColourPrice = 4d;
                 } else if (size.equals("A4")) {
-                    leatherColourPrice = 5;
+                    leatherColourPrice = 5d;
                 }
             } else if (colourOfLeather.equals("white leather")) {
                 if (size.equals("A5")) {
-                    leatherColourPrice = 4;
+                    leatherColourPrice = 4d;
                 } else if (size.equals("B5")) {
-                    leatherColourPrice = 6;
+                    leatherColourPrice = 6d;
                 } else if (size.equals("A4")) {
-                    leatherColourPrice = 8;
+                    leatherColourPrice = 8d;
                 }
             } else if (colourOfLeather.equals("multi")) {
                 if (size.equals("A5")) {
-                    leatherColourPrice = 5;
+                    leatherColourPrice = 5d;
                 } else if (size.equals("B5")) {
-                    leatherColourPrice = 10;
+                    leatherColourPrice = 10d;
                 } else if (size.equals("A4")) {
-                    leatherColourPrice = 15;
+                    leatherColourPrice = 15d;
                 }
             }
         } else {
