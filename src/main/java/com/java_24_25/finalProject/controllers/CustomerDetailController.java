@@ -1,8 +1,8 @@
 package com.java_24_25.finalProject.controllers;
 
-
 import com.java_24_25.finalProject.Calculator;
 import com.java_24_25.finalProject.models.Book;
+import com.java_24_25.finalProject.services.BookService;
 import com.java_24_25.finalProject.services.PageDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +15,9 @@ public class CustomerDetailController {
 
     @Autowired
     PageDataService pageDataService;
-    private String totalPrice;
-    //public double totalBookPrice;
+    @Autowired
+    BookService bookService;
+    String totalPrice;
 
     @GetMapping("/the_book")
     public String showTheBookPage(Model model,
@@ -24,10 +25,11 @@ public class CustomerDetailController {
                                   @RequestParam(name = "leatherType") String leatherType,
                                   @RequestParam(name = "colourOfLeather") String colourOfLeather,
                                   @RequestParam(name = "size") String size,
-                                  @RequestParam(name = "numberOfPages") int numberOfPages,
+                                  @RequestParam(name = "numberOfPages") String numberOfPages,
                                   @RequestParam(name = "paperType") String paperType,
-                                  @RequestParam(name = "paperBaseColour") String paperBaseColour
-
+                                  @RequestParam(name = "paperBaseColour") String paperBaseColour,
+                                  @RequestParam(name = "submitForm", required = false) String choice,
+                                  @RequestParam(name = "totalPrice", required = false) String totalPrice
     ) {
 
         System.out.println(pageDataService.getProjectTitle()); // shows in the console that it works
@@ -46,27 +48,22 @@ public class CustomerDetailController {
                 + "Paper base colour: " + paperBaseColour + '\''
         );
 
+        if (choice != null && choice.equalsIgnoreCase("order")) {
+            try {
+                Book book = new Book(coverType, leatherType, colourOfLeather, size, numberOfPages, paperType, paperBaseColour, totalPrice);
+
+                model.addAttribute("bookId", bookService.createBookZ(book).getId());
+                model.addAttribute("totalPrice", totalPrice);
+
+                return "contact";
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        }
+
+
         Book book = new Book(coverType, leatherType, colourOfLeather, size, numberOfPages, paperType, paperBaseColour);
-        model.addAttribute("coverType", coverType);
-        model.addAttribute("leatherType", leatherType);
-        model.addAttribute("colourOfLeather", colourOfLeather);
-        model.addAttribute("size", size);
-        model.addAttribute("numberOfPages", numberOfPages);
-        model.addAttribute("paperType", paperType);
-        model.addAttribute("paperBaseColour", paperBaseColour);
-
-        Calculator calculator = new Calculator();
-        double coverPrice = calculator.calculateThePriceForTheCover(coverType);
-        double leatherTypePrice = calculator.calculateLeatherTypePrice(leatherType, coverType, size);
-        double paperTypePrice = calculator.calculatePaperTypePrice(paperType, size);
-        double numberOfPagesPrice = calculator.calculateNumberOfPagesPrice(paperTypePrice, numberOfPages);
-
-        double paperColorPrice = calculator.calculatePaperColorPrice(paperBaseColour, paperType, size, numberOfPages);
-        double leatherColourPrice = calculator.calculateLeatherColorPrice(leatherType, colourOfLeather, size);
-
-        double totalBookPrice = calculator.calculateTotalBookPrice(coverPrice, leatherTypePrice, numberOfPagesPrice, paperColorPrice, leatherColourPrice);
-        model.addAttribute("totalPrice", String.format("%.2f", totalBookPrice));
+        bookService.calculatePrice(model, book);
         return "yourBook";
     }
-
 }

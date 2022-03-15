@@ -25,6 +25,7 @@ background-color: violet;
 footer{
 background-color: secondary;
 }
+
     </style>
 </head>
 <body>
@@ -38,14 +39,14 @@ background-color: secondary;
     <h5>Thanks for placing the order.</h5>
     <div class="row justify-content-left">
         <!-- border left -->
-        <div class="col-lg-4 p-0"></div>
+        <div class="col-lg-5 p-0"></div>
         <!-- details -->
-        <div class="col-lg-3 p-0">
+        <div class="col-lg-2 p-0">
             <span>The invoice: EUR</span><br>
             <span>This order is for</span><br>
             <span>Shipping address:</span><br>
-            <span>Order status:</span><br><br>
-            <span> Order confirmation has been sent to </span>
+            <span>Order status:</span><br>
+            <span>Order confirmation and invoice you`ll receive:</span><br>
         </div>
         <!-- detail values -->
         <div class="col-lg-3 p-0">
@@ -63,5 +64,11 @@ background-color: secondary;
 </main>
 <footer class="container-fluid p-3 bg-secondary text-white" style="height: 50px">
 </footer>
+<script>
+    Cookies.set("${totalPrice}", "true", { expires: 2});
+    var priceCookie = Cookies.get("${totalPrice}");
+    console.log(priceCookie);
+
+</script>
 </body>
 </html>

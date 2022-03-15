@@ -14,4 +14,3 @@ public class Customer {
     private String customerAddress;
     private String customerEmail;
 }
-

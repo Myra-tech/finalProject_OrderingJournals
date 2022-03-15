@@ -1,12 +1,12 @@
 package com.java_24_25.finalProject;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class FinalProjectApplicationTests {
+
 	private Calculator calculator = new Calculator();
 
 	@Test
@@ -16,7 +16,7 @@ class FinalProjectApplicationTests {
 		// When
 		double result = calculator.calculateThePriceForTheCover(coverType);
 		//Then
-		Assert.assertEquals(result, 20.0d, 0);
+		Assertions.assertTrue(result == 20.0);
 	}
 
 	@Test
@@ -83,4 +83,3 @@ class FinalProjectApplicationTests {
 		Assertions.assertTrue(totalBookPrice == 67.30);
 	}
 }
-
