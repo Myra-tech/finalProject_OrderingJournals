@@ -128,9 +128,9 @@ public class Calculator {
                 tempColorPrice = 2.7;
             } else if (size.equals("A4")) {
                 tempColorPrice = 3.3;
-            }
+            } System.out.println("Price for non-white sketch paper when size is " + size + " is " + tempColorPrice + ".");
         }
-        System.out.println("Price for non-white sketch paper when size is " + size + " is " + tempColorPrice + ".");
+
 
         if (numberOfPages == 100) {
             paperColorPrice = tempColorPrice * 2;
@@ -189,7 +189,7 @@ public class Calculator {
                 }
             }
         } else {
-            System.out.println("The entry is not recognized.");
+            System.out.println("You have chosen standardised colour of chrome leather type.");
         }
 
         System.out.println("Price for " + leatherType + " leather in " + colourOfLeather + " colour of " + size + " book is " + leatherColourPrice + ".");
